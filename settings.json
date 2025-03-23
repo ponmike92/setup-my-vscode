@@ -14,11 +14,6 @@
 	"window.titleBarStyle": "native",
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
 
-	// brackets
-	// "BracketHighlighter.highlightScopeFromText": true,
-	// "BracketHighlighter.blurOutOfScopeText": false,
-	"BracketHighlighter.textColor": "#ac2e56",
-
 	// color manager
 	"color-manager.styles": {
 		"selectionBorder": "#ffffff55",
@@ -94,16 +89,6 @@
 		// warnings and errors
 		"editorError.foreground": "#ff646455",
 		"editorWarning.foreground": "#fa973a55",
-
-		// error lens
-		"errorLens.warningBackground": "#ff942f15",
-		"errorLens.errorBackground": "#e4545415",
-		"errorLens.hintBackground": "#17a2a215",
-		"errorLens.infoBackground": "#00b7e415",
-		"errorLens.warningForeground": "#fa973a55",
-		"errorLens.errorForeground": "#ff646455",
-		"errorLens.hintForeground": "#2faf6455",
-		"errorLens.infoForeground": "#00b7e455",
 
 		// sidebar
 		"sideBarTitle.foreground": "#222222",
@@ -302,9 +287,8 @@
 	"workbench.editor.customLabels.enabled": true,
 
 	// windows & visibility
-	"window.title": "\u200B",
-	"workbench.startupEditor": "none",
 	"window.commandCenter": false,
+	"workbench.startupEditor": "none",
 	"workbench.editor.editorActionsLocation": "hidden",
 	"workbench.layoutControl.enabled": false,
 	"window.density.editorTabHeight": "compact",
@@ -315,17 +299,6 @@
 	"workbench.editor.showIcons": false,
 	"workbench.editor.labelFormat": "short",
 	"breadcrumbs.enabled": false,
-
-	"editor.emptySelectionClipboard": false,
-	"editor.colorDecorators": false,
-	"editor.bracketPairColorization.enabled": false,
-	"editor.matchBrackets": "always",
-	"editor.parameterHints.enabled": false,
-	"editor.glyphMargin": true,
-	"editor.scrollbar.verticalScrollbarSize": 3,
-	"editor.scrollbar.horizontal": "hidden",
-	"editor.accessibilitySupport": "off",
-	"editor.rename.enablePreview": false,
 
 	"breadcrumbs.icons": false,
 	"breadcrumbs.showKeys": false,
@@ -370,23 +343,6 @@
 	// search
 	"editor.find.autoFindInSelection": "multiline",
 
-	// diff editor
-	"diffEditor.renderSideBySide": true,
-
-	// editor
-	"editor.renderLineHighlight": "none",
-	"editor.guides.indentation": false,
-	"editor.hover.enabled": false,
-	"editor.semanticHighlighting.enabled": true,
-	"editor.lineNumbers": "off",
-	"editor.padding.top": 50,
-	"editor.renderWhitespace": "all",
-	"editor.gotoLocation.multipleDefinitions": "goto",
-	"editor.folding": true,
-	"editor.smoothScrolling": true,
-	"editor.inlineSuggest.enabled": false,
-	"editor.lightbulb.enabled": "off",
-
 	// markdown
 	"[markdown]": { "editor.detectIndentation": true, "editor.formatOnSave": false, "editor.insertSpaces": true, "editor.tabSize": 2 },
 
@@ -406,8 +362,6 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
 	},
-	// "ruff.nativeServer": "on",
-	// "ruff.format.preview": false,
 	"ruff.lineLength": 120,
 	"[python]": {
 		"editor.tabSize": 4,
@@ -425,20 +379,7 @@
 	"prettier.jsxSingleQuote": true,
 	"prettier.arrowParens": "always",
 
-	// wraps to another line
-	"editor.wordWrap": "wordWrapColumn",
-	"editor.wrappingIndent": "same",
-	"editor.wordWrapColumn": 120,
-
-	// cursor
-	"editor.cursorSurroundingLines": 5,
-	"editor.cursorBlinking": "solid",
-	"editor.cursorStyle": "underline",
-	"editor.cursorSmoothCaretAnimation": "explicit",
-	"editor.occurrencesHighlight": "off",
-
 	// sticky scrolling view
-	"editor.stickyScroll.enabled": false,
 	"workbench.tree.enableStickyScroll": false,
 
 	// JS & TS & html
@@ -488,8 +429,6 @@
 	"errorLens.fontSize": "12",
 	"errorLens.fontWeight": "bold",
 
-	"window.customTitleBarVisibility": "never",
-
 	"git.showCommitInput": false,
 	"git.useEditorAsCommitInput": false,
 	"git.suggestSmartCommit": false,
@@ -521,9 +460,6 @@
 		"MD047": false
 	},
 
-	// folding
-	"editor.foldingStrategy": "auto",
-
 	// quick fix (working?)
 	"editor.codeActionsOnSave": {},
 	"errorLens.messageEnabled": true,
@@ -541,7 +477,6 @@
 		"*.sdb": "${capture}.${extname}-*",
 		"*.s3db": "${capture}.${extname}-*"
 	},
-	"markdown.extension.toc.plaintext": true,
 
 	// select by regex
 	"selectby.regexes": {
@@ -587,7 +522,6 @@
 	"Lua.completion.showWord": "Disable",
 	"Lua.hint.arrayIndex": "Disable",
 	"Lua.hint.paramName": "Disable",
-	"diffEditor.ignoreTrimWhitespace": false,
 	"workbench.colorTheme": "Moegi Black",
 	"notebook.confirmDeleteRunningCell": false,
 	"workbench.activityBar.location": "hidden",
@@ -625,6 +559,52 @@
 	"editor.acceptSuggestionOnEnter": "on",
 	"editor.wordBasedSuggestions": "matchingDocuments",
 
+	// editor - word wraps to another line
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.wrappingIndent": "same",
+	"editor.wordWrapColumn": 120,
+
+	// editor - cursor & sticky scroll
+	"editor.cursorSurroundingLines": 5,
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "underline",
+	"editor.cursorSmoothCaretAnimation": "explicit",
+	"editor.occurrencesHighlight": "off",
+	"editor.stickyScroll.enabled": false,
+
+	// editor - folding
+	"editor.foldingStrategy": "auto",
+	
+	// editor - 
+	"editor.lineNumbers": "off",
+	"editor.glyphMargin": true,
+	"editor.lightbulb.enabled": "off",
+
+	// editor - etc
+	"editor.emptySelectionClipboard": false,
+	"editor.colorDecorators": false,
+	"editor.bracketPairColorization.enabled": false,
+	"editor.matchBrackets": "always",
+	"editor.parameterHints.enabled": false,
+	"editor.scrollbar.verticalScrollbarSize": 3,
+	"editor.scrollbar.horizontal": "hidden",
+	"editor.accessibilitySupport": "off",
+	"editor.rename.enablePreview": false,
+	"editor.renderLineHighlight": "none",
+	"editor.guides.indentation": false,
+	"editor.hover.enabled": false,
+	"editor.semanticHighlighting.enabled": true,
+	"editor.padding.top": 50,
+	"editor.renderWhitespace": "all",
+	"editor.gotoLocation.multipleDefinitions": "goto",
+	"editor.folding": true,
+	"editor.smoothScrolling": true,
+	"editor.inlineSuggest.enabled": false,
+
+	// diff editor
+	"diffEditor.renderSideBySide": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+
 	// plugin: Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
 	"bookmarks.gutterIconFillColor": "crimson",
@@ -644,5 +624,11 @@
 	"outline-map.region.enabled": false,
 	"outline-map.region.highlight": false,
 	"outline-map.workspace.excludes": [],
-	"redhat.telemetry.enabled": false
+	"redhat.telemetry.enabled": false,
+
+	// plugin: Bracket Highlighter
+	"BracketHighlighter.textColor": "#ac2e56",
+
+	// plugin: 
+	"markdown.extension.toc.plaintext": true
 }
