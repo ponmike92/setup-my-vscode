@@ -1,35 +1,6 @@
 {
 	"update.mode": "manual",
 
-
-	// color manager
-	"color-manager.styles": {
-		"selectionBorder": "#ffffff55",
-		"inputBorder": "#ffffff00",
-		"buttonBackground": "none",
-		"buttonBorder": "none",
-		"buttonHoverBackground": "none",
-		"buttonForeground": "#ffffff99"
-
-		// "background": "LightGrey",
-
-		// "foreground": "green", // labels and lines
-
-		// "popupBorder": "Fuchsia", // border for colorpicker, palette-manager and dialogbox
-
-		// "inputForeground": "#000", // input-text
-
-		// "inputBackground": "white", // dropdown input on top and inputs in Palette Manager
-
-		// "dropdownForeground": "tomato",
-
-		// "dropdownBackground": "white",
-
-		// "dropdownHoverBackground": "hsla(0, 61%, 50%, 0.51)",
-
-		// "overlayBackground": "hsla(0, 61%, 50%, 0.51)" // overlay for dialogbox
-	},
-
 	"workbench.colorCustomizations": {
 		"terminal.background": "#161616",
 		// diff editor
@@ -159,62 +130,23 @@
 		]
 	},
 
-	"editor.fontSize": 13,
-
-	// windows & visibility
-	"breadcrumbs.enabled": false,
-
-	"breadcrumbs.icons": false,
-	"breadcrumbs.showKeys": false,
-	"breadcrumbs.showFiles": false,
-	"breadcrumbs.symbolPath": "off",
-	"breadcrumbs.showArrays": false,
-	"breadcrumbs.showEvents": false,
-	"breadcrumbs.showFields": false,
-	"breadcrumbs.showClasses": false,
-	"breadcrumbs.showMethods": false,
-	"breadcrumbs.showBooleans": false,
-	"breadcrumbs.showFunctions": false,
-	"breadcrumbs.showConstants": false,
-	"breadcrumbs.showEnumMembers": false,
-	"breadcrumbs.showConstructors": false,
-	"breadcrumbs.filePath": "off",
-	"editor.minimap.enabled": false,
-	"editor.showFoldingControls": "never",
-
-	// terminal
-	"terminal.integrated.fontSize": 13,
+	// TERMINAL
+	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.tabs.enabled": false,
 	"terminal.integrated.stickyScroll.enabled": false,
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.cursorStyle": "line",
 	"terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
-	"workbench.editor.customLabels.patterns": {
-		//"**": "${filename}.${extname}                                  ",
-		//"**/.zshrc": "${filename}                                        ",
-		"**": "${filename}                                                                           "
-	},
-
-	// windows & behaviour
-	"editor.unicodeHighlight.ambiguousCharacters": false,
-
-	// tabs
-
-	// search
-	"editor.find.autoFindInSelection": "multiline",
-
-	// markdown
-	"[markdown]": { "editor.detectIndentation": true, "editor.formatOnSave": false, "editor.insertSpaces": true, "editor.tabSize": 2 },
-
-	// editor formatter
+	// formatting
 	"editor.formatOnSave": false,
 	"editor.formatOnPaste": true,
 	"editor.formatOnType": true,
 	"editor.detectIndentation": true,
-	"python.analysis.autoIndent": false,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
+
+	// YAML
 	"[yaml]": { "editor.formatOnSave": false },
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[lua]": {
@@ -223,7 +155,10 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
 	},
-	"ruff.lineLength": 120,
+	
+	
+	// python
+	"python.analysis.autoIndent": false,
 	"[python]": {
 		"editor.tabSize": 4,
 		"editor.insertSpaces": false,
@@ -232,6 +167,9 @@
 		"editor.formatOnType": false
 	},
 
+	// markdown
+	"[markdown]": { "editor.detectIndentation": true, "editor.formatOnSave": false, "editor.insertSpaces": true, "editor.tabSize": 2 },
+
 	// prettier
 	"prettier.printWidth": 160,
 	"prettier.semi": false,
@@ -239,6 +177,9 @@
 	"prettier.singleQuote": true,
 	"prettier.jsxSingleQuote": true,
 	"prettier.arrowParens": "always",
+	
+	// ruff
+	"ruff.lineLength": 120,
 
 	// JS & TS & html
 	// "html.completion.attributeStyLuaValue": "singlequotes",
@@ -262,19 +203,6 @@
 	"git.decorations.enabled": true,
 	"git.timeline.showAuthor": false,
 	"git.timeline.showUncommitted": true,
-
-	// extensions
-	"extensions.ignoreRecommendations": true,
-	"extensions.autoUpdate": true,
-
-	"editor.lineHeight": 0,
-	"errorLens.enabledDiagnosticLevels": ["warning", "info"],
-	"errorLens.enabled": false,
-	"errorLens.codeLensLength": {
-		"min": 0
-	},
-	"errorLens.fontSize": "12",
-	"errorLens.fontWeight": "bold",
 
 	"git.showCommitInput": false,
 	"git.useEditorAsCommitInput": false,
@@ -369,12 +297,12 @@
 	"Lua.completion.showWord": "Disable",
 	"Lua.hint.arrayIndex": "Disable",
 	"Lua.hint.paramName": "Disable",
-	"notebook.confirmDeleteRunningCell": false,
+
+	// LANGUAGES
+
 
 	// WINDOW
-	// no title bar
-	// NEED TO EDIT
-	// IN THIS FILE: 'Contents/Resources/app/out/main.js'
+	// EDIT ME: 'Contents/Resources/app/out/main.js'
 	// ADD FRAME INFO:  sed -i 's/webPreferences/frame:!1,webPreferences/'
 	"window.titleBarStyle": "native",
 	"window.zoomLevel": 0,
@@ -383,6 +311,24 @@
 	"window.openFilesInNewWindow": "off",
 	"window.nativeTabs": false,
 	"window.openFoldersInNewWindow": "off",
+
+	// BREADCRUMBS
+	"breadcrumbs.enabled": false,
+	"breadcrumbs.icons": false,
+	"breadcrumbs.showKeys": false,
+	"breadcrumbs.showFiles": false,
+	"breadcrumbs.symbolPath": "off",
+	"breadcrumbs.showArrays": false,
+	"breadcrumbs.showEvents": false,
+	"breadcrumbs.showFields": false,
+	"breadcrumbs.showClasses": false,
+	"breadcrumbs.showMethods": false,
+	"breadcrumbs.showBooleans": false,
+	"breadcrumbs.showFunctions": false,
+	"breadcrumbs.showConstants": false,
+	"breadcrumbs.showEnumMembers": false,
+	"breadcrumbs.showConstructors": false,
+	"breadcrumbs.filePath": "off",
 
 	// WORKBENCH
 	// themes
@@ -394,9 +340,12 @@
 	"workbench.statusBar.visible": false,
 	"workbench.editor.customLabels.enabled": true,
 	"workbench.editor.enablePreview": false,
-	"workbench.activityBar.location": "hidden",
+	"workbench.editor.customLabels.patterns": {
+		"**": "${filename}                                                                                                                                                                                                                                                            "
+	},
 
 	// redundant
+	"workbench.tree.enableStickyScroll": false,
 	"workbench.startupEditor": "none",
 	"workbench.editor.editorActionsLocation": "hidden",
 	"workbench.layoutControl.enabled": false,
@@ -406,7 +355,6 @@
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.editor.labelFormat": "short",
-	"workbench.tree.enableStickyScroll": false,
 	"workbench.quickOpen.closeOnFocusLost": false,
 	
 	// FILES
@@ -461,7 +409,7 @@
 	"editor.cursorStyle": "underline",
 	"editor.cursorSmoothCaretAnimation": "explicit",
 	"editor.occurrencesHighlight": "off",
-	"editor.stickyScroll.enabled": true,
+	"editor.stickyScroll.enabled": false,
 
 	// folding
 	"editor.foldingStrategy": "auto",
@@ -471,7 +419,14 @@
 	"editor.glyphMargin": true,
 	"editor.lightbulb.enabled": "off",
 
+	// do not show cyrrilic highlights
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+
+	// search
+	"editor.find.autoFindInSelection": "multiline",
+
 	// etc
+	"editor.lineHeight": 0,
 	"editor.emptySelectionClipboard": false,
 	"editor.colorDecorators": false,
 	"editor.bracketPairColorization.enabled": false,
@@ -491,17 +446,49 @@
 	"editor.folding": true,
 	"editor.smoothScrolling": true,
 	"editor.inlineSuggest.enabled": false,
+	"editor.fontSize": 13,
+	"editor.minimap.enabled": false,
+	"editor.showFoldingControls": "never",
+
 
 	// DIFF EDITOR
 	"diffEditor.renderSideBySide": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 
-	// PLUGINS
+	// EXTENSIONS
+	// settings
+	"extensions.ignoreRecommendations": true,
+	"extensions.autoUpdate": true,
+
 	// Colorize (toggle in keybindings!)
-	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
-	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
+	"colorize.include": [
+		"**/*.json",
+		"**/*.conf",
+		"**/*.conf",
+		"**/*.md"
+	],
+	"colorize.languages": [
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"postcss",
+		"sss",
+		"stylus",
+		"xml",
+		"svg",
+		"toml",
+		"json"
+	],
 	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
+	"colorize.colorized_colors": [
+		"BROWSERS_COLORS",
+		"HEXA",
+		"RGB",
+		"HSL",
+		"OKLAB",
+		"OKLCH"
+	],
 
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
@@ -533,5 +520,6 @@
 	// Audio-preview
 	"workbench.editorAssociations": {
 		"*.oga": "wavPreview.audioPreview"
-	}
+	},
+	"workbench.activityBar.location": "hidden"
 }
