@@ -477,7 +477,7 @@
 		"*.oga": "wavPreview.audioPreview"
 	},
 
-	// Select by Regex
+	// Select by
 	"selectby.regexes": {
 		"SelectParagraph": {
 			"flags": "m",
@@ -488,8 +488,8 @@
 		},
 		"SelectBetweenHeadings": {
 			"flags": "m",
-			"backward": "^#+[ \\t].*\\r?\\n",
-			"forward": "^#+[ \\t].*\\r?\\n",
+			"backward": "^#+[ \\t].*\\r?\\n(?:[ \\t]*\\r?\\n)*",
+			"forward": "(?:[ \\t]*\\r?\\n)*(?=^#+[ \\t])",
 			"backwardInclude": false,
 			"forwardInclude": false
 		}
