@@ -115,10 +115,6 @@
 		"command": "git.viewStagedChanges"
 	},
 	{
-		"key": "cmd+g s",
-		"command": "git.stage"
-	},
-	{
 		"key": "cmd+g u",
 		"command": "workbench.action.terminal.sendSequence",
 		"args": { "text": "git reset --soft HEAD~1\n" }
@@ -385,23 +381,6 @@
 		"command": "extension.multiCommand.execute",
 		"args": {
 			"sequence": ["bookmarks.jumpToNext", "scroll-faster.down"]
-		}
-	},
-	// cursor and scroll
-	{
-		"key": "alt+cmd+h",
-		"command": "toggle",
-		"when": "editorTextFocus",
-		"args": {
-			"id": "typewriter_auto_scroll",
-			"value": [
-				{
-					"typewriterAutoScroll.enable": false
-				},
-				{
-					"typewriterAutoScroll.enable": true
-				}
-			]
 		}
 	},
 	// {
@@ -3153,5 +3132,17 @@
 	{
 		"key": "cmd+d",
 		"command": "quickDim.dim"
+	},
+	{
+		"key": "shift+cmd+/",
+		"command": "-cloak.toggleSecrets"
+	},
+	{
+		"key": "alt+cmd+h",
+		"command": "cloak.hideSecrets"
+	},
+	{
+		"key": "cmd+g s",
+		"command": "git.stageAll"
 	}
 ]
