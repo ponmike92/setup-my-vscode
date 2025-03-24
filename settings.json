@@ -420,7 +420,7 @@
 	"workbench.quickOpen.closeOnFocusLost": false,
 	
 
-	// explorer
+	// EXPLORER
 	"explorer.openEditors.minVisible": 9,
 	"explorer.openEditors.visible": 9,
 	"explorer.openEditors.sortOrder": "editorOrder",
@@ -435,7 +435,8 @@
 	"explorer.confirmPasteNative": false,
 	"files.exclude": {},
 
-	// editor - autocomplete & suggestions
+	// EDITOR 
+	// autocomplete & suggestions
 	"editor.inlineSuggest.showToolbar": "never",
 	"editor.snippetSuggestions": "none",
 	"editor.suggest.showWords": true,
@@ -452,12 +453,12 @@
 	"editor.acceptSuggestionOnEnter": "on",
 	"editor.wordBasedSuggestions": "matchingDocuments",
 
-	// editor - word wraps
+	// word wraps
 	"editor.wordWrap": "wordWrapColumn",
 	"editor.wrappingIndent": "same",
 	"editor.wordWrapColumn": 120,
 
-	// editor - cursor & sticky scroll
+	// cursor & sticky scroll
 	"editor.cursorSurroundingLines": 5,
 	"editor.cursorBlinking": "solid",
 	"editor.cursorStyle": "underline",
@@ -465,15 +466,15 @@
 	"editor.occurrencesHighlight": "off",
 	"editor.stickyScroll.enabled": true,
 
-	// editor - folding
+	// folding
 	"editor.foldingStrategy": "auto",
 
-	// editor - numbering
+	// numbering
 	"editor.lineNumbers": "off",
 	"editor.glyphMargin": true,
 	"editor.lightbulb.enabled": "off",
 
-	// editor - etc
+	// etc
 	"editor.emptySelectionClipboard": false,
 	"editor.colorDecorators": false,
 	"editor.bracketPairColorization.enabled": false,
@@ -494,28 +495,29 @@
 	"editor.smoothScrolling": true,
 	"editor.inlineSuggest.enabled": false,
 
-	// diff editor
+	// DIFF EDITOR
 	"diffEditor.renderSideBySide": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 
-	// plugin: Colorize (toggle in keybindings!)
+	// PLUGINS
+	// Colorize (toggle in keybindings!)
 	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
 	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
 	"colorize.enable_search_variables": true,
 	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
 
-	// plugin: Bookmarks
+	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
 	"bookmarks.gutterIconFillColor": "crimson",
 	"bookmarks.gutterIconBorderColor": "rgb(99, 40, 64)",
 
-	// plugin: Scroll Faster
+	// Scroll Faster
 	"scrollFaster.scrollByLines": 8,
 
-	// plugin: Better Folding
+	// Better Folding
 	"betterFolding.showFoldedBodyLinesCount": false,
 
-	// plugin: Outline Map
+	// Outline Map
 	"outline-map.defaultMaxDepth": 1,
 	"outline-map.workspace.enabled": false,
 	"outline-map.expand": "manual",
@@ -525,13 +527,13 @@
 	"outline-map.workspace.excludes": [],
 	"redhat.telemetry.enabled": false,
 
-	// plugin: Bracket Highlighter
+	// Bracket Highlighter
 	"BracketHighlighter.textColor": "#ac2e56",
 
-	// plugin:
+	// Markdown All In One?
 	"markdown.extension.toc.plaintext": true,
 
-	// plugin: audio-preview
+	// Audio-preview
 	"workbench.editorAssociations": {
 		"*.oga": "wavPreview.audioPreview"
 	}
