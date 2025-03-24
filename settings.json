@@ -110,24 +110,21 @@
 				"settings": { "foreground": "#6a6e6c", "fontStyle": "italic" }
 			},
 			// кавычки у строк в кавычках
-			{
-				"scope": [
+			{ "scope": [
 					"string.quoted.single punctuation.definition.string.begin",
 					"string.quoted.single punctuation.definition.string.end",
 					"string.quoted.double punctuation.definition.string.begin",
 					"string.quoted.double punctuation.definition.string.end",
 					"string.quoted.multi punctuation.definition.string.begin",
 					"string.quoted.multi punctuation.definition.string.end"
-				],
-				"settings": {
-					"foreground": "#404040"
-				}
-			},
-			{ "scope": "punctuation.separator.comma", "settings": { "foreground": "#555555" } },
-			{ "scope": "punctuation.separator", "settings": { "foreground": "#555555" } },
+				], "settings": { "foreground": "#404040" } },
+			{ "scope": [
+					"punctuation.separator.comma",
+					"punctuation.separator", 
+					"punctuation.definition.comment"
+				],  "settings": { "foreground": "#555555" } },
 
 			{ "scope": "comment.line", "settings": { "foreground": "#444444", "fontStyle": "italic" } },
-			{ "scope": ["punctuation.definition.comment"], "settings": { "foreground": "#555555" } }
 		]
 	},
 
