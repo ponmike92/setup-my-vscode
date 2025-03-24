@@ -155,8 +155,7 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
 	},
-	
-	
+
 	// python
 	"python.analysis.autoIndent": false,
 	"[python]": {
@@ -177,7 +176,7 @@
 	"prettier.singleQuote": true,
 	"prettier.jsxSingleQuote": true,
 	"prettier.arrowParens": "always",
-	
+
 	// ruff
 	"ruff.lineLength": 120,
 
@@ -190,7 +189,6 @@
 	"typescript.preferences.quoteStyle": "single",
 
 	// debug
-	// "debug.toolBarLocation": "hidden",
 	"debug.focusWindowOnBreak": false,
 	"debug.showInlineBreakpointCandidates": false,
 	"debug.showBreakpointsInOverviewRuler": false,
@@ -253,24 +251,7 @@
 		"*.s3db": "${capture}.${extname}-*"
 	},
 
-	// select by regex
-	"selectby.regexes": {
-		"SelectParagraph": {
-			"flags": "m",
-			"backward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
-			"forward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
-			"backwardInclude": false,
-			"forwardInclude": false
-		},
-		"SelectBetweenHeadings": {
-			"flags": "m",
-			"backward": "^#+[ \\t].*\\r?\\n",
-			"forward": "^#+[ \\t].*\\r?\\n",
-			"backwardInclude": false,
-			"forwardInclude": false
-		}
-	},
-
+	// lua
 	"Lua.diagnostics.enable": false,
 	"Lua.completion.autoRequire": false,
 	"Lua.completion.enable": false,
@@ -299,7 +280,6 @@
 	"Lua.hint.paramName": "Disable",
 
 	// LANGUAGES
-
 
 	// WINDOW
 	// EDIT ME: 'Contents/Resources/app/out/main.js'
@@ -356,7 +336,7 @@
 	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.editor.labelFormat": "short",
 	"workbench.quickOpen.closeOnFocusLost": false,
-	
+
 	// FILES
 	"files.exclude": {},
 	"files.defaultLanguage": "markdown",
@@ -380,7 +360,7 @@
 	"explorer.autoReveal": false,
 	"explorer.confirmPasteNative": false,
 
-	// EDITOR 
+	// EDITOR
 	// autocomplete & suggestions
 	"editor.inlineSuggest.showToolbar": "never",
 	"editor.snippetSuggestions": "none",
@@ -450,7 +430,6 @@
 	"editor.minimap.enabled": false,
 	"editor.showFoldingControls": "never",
 
-
 	// DIFF EDITOR
 	"diffEditor.renderSideBySide": true,
 	"diffEditor.ignoreTrimWhitespace": false,
@@ -461,34 +440,10 @@
 	"extensions.autoUpdate": true,
 
 	// Colorize (toggle in keybindings!)
-	"colorize.include": [
-		"**/*.json",
-		"**/*.conf",
-		"**/*.conf",
-		"**/*.md"
-	],
-	"colorize.languages": [
-		"css",
-		"sass",
-		"scss",
-		"less",
-		"postcss",
-		"sss",
-		"stylus",
-		"xml",
-		"svg",
-		"toml",
-		"json"
-	],
+	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
+	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
 	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": [
-		"BROWSERS_COLORS",
-		"HEXA",
-		"RGB",
-		"HSL",
-		"OKLAB",
-		"OKLCH"
-	],
+	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
 
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
@@ -521,5 +476,25 @@
 	"workbench.editorAssociations": {
 		"*.oga": "wavPreview.audioPreview"
 	},
+
+	// Select by Regex
+	"selectby.regexes": {
+		"SelectParagraph": {
+			"flags": "m",
+			"backward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
+			"forward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
+			"backwardInclude": false,
+			"forwardInclude": false
+		},
+		"SelectBetweenHeadings": {
+			"flags": "m",
+			"backward": "^#+[ \\t].*\\r?\\n",
+			"forward": "^#+[ \\t].*\\r?\\n",
+			"backwardInclude": false,
+			"forwardInclude": false
+		}
+	},
+
+	// ?
 	"workbench.activityBar.location": "hidden"
 }
