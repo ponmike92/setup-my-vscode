@@ -173,12 +173,6 @@
 		]
 	},
 
-	// colorize variables in keybindings!
-	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
-	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
-	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
-
 	"workbench.editorAssociations": {
 		"*.oga": "wavPreview.audioPreview"
 	},
@@ -506,6 +500,36 @@
 	// diff editor
 	"diffEditor.renderSideBySide": true,
 	"diffEditor.ignoreTrimWhitespace": false,
+
+	// plugin: Colorize (toggle in keybindings!)
+	"colorize.include": [
+		"**/*.json",
+		"**/*.conf",
+		"**/*.conf",
+		"**/*.md"
+	],
+	"colorize.languages": [
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"postcss",
+		"sss",
+		"stylus",
+		"xml",
+		"svg",
+		"toml",
+		"json"
+	],
+	"colorize.enable_search_variables": true,
+	"colorize.colorized_colors": [
+		"BROWSERS_COLORS",
+		"HEXA",
+		"RGB",
+		"HSL",
+		"OKLAB",
+		"OKLCH"
+	],
 
 	// plugin: Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
