@@ -3,7 +3,9 @@
 	"update.mode": "manual",
 
 	"workbench.colorCustomizations": {
+		// terminal
 		"terminal.background": "#161616",
+
 		// diff editor
 		"diffEditor.removedTextBackground": "#ac2e5620",
 		"diffEditor.removedLineBackground": "#ac2e5620",
@@ -34,6 +36,9 @@
 
 		// folded
 		"editor.foldBackground": "#ffffff00",
+
+		// selection
+		"editor.selectionBackground": "#303030",
 
 		// main background
 		"editor.background": "#202020",
@@ -106,8 +111,12 @@
 
 			// строки в кавычках
 			{
-				"scope": ["string.quoted.single", "string.quoted.double", "string.quoted.multi", "string.quoted.docstring.multi"],
-				"settings": { "foreground": "#6a6e6c", "fontStyle": "italic" }
+				"scope": [
+					"string.quoted.single",
+					"string.quoted.double",
+					"string.quoted.multi",
+					"string.quoted.docstring.multi"],
+				"settings": { "foreground": "#6a6e6c"  }
 			},
 			// кавычки у строк в кавычках
 			{ "scope": [
@@ -124,7 +133,8 @@
 					"punctuation.definition.comment"
 				],  "settings": { "foreground": "#555555" } },
 
-			{ "scope": "comment.line", "settings": { "foreground": "#444444", "fontStyle": "italic" } },
+			{ "scope": "comment.line", "settings": { "foreground": "#444444", "fontStyle": "italic" } }
+			// { "scope": "comment.line", "settings": { "foreground": "#BF3666", "fontStyle": "italic" } }
 		]
 	},
 
@@ -269,7 +279,7 @@
 	// WORKBENCH
 	// themes
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
-	"workbench.colorTheme": "Moegi Dark",
+	"workbench.colorTheme": "Moegi Black",
 
 	// UI
 	"workbench.sideBar.location": "right",
@@ -427,10 +437,34 @@
 	},
 
 	// Colorize (toggle in keybindings!)
-	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
-	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
+	"colorize.include": [
+		"**/*.json",
+		"**/*.conf",
+		"**/*.conf",
+		"**/*.md"
+	],
+	"colorize.languages": [
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"postcss",
+		"sss",
+		"stylus",
+		"xml",
+		"svg",
+		"toml",
+		"json"
+	],
 	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
+	"colorize.colorized_colors": [
+		"BROWSERS_COLORS",
+		"HEXA",
+		"RGB",
+		"HSL",
+		"OKLAB",
+		"OKLCH"
+	],
 
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
