@@ -1,7 +1,15 @@
 {
-	// GLOBAL
+	// FONT & THEME
+	"workbench.colorTheme": "Moegi Black",
+	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
+	"editor.fontSize": 14,
+	"terminal.integrated.fontSize": 14,
+	"window.zoomLevel": 0,
+
+	// UPDATES
 	"update.mode": "manual",
 
+	// COLORS
 	"workbench.colorCustomizations": {
 		// terminal
 		"terminal.background": "#161616",
@@ -132,15 +140,7 @@
 			// { "scope": "comment.line", "settings": { "foreground": "#BF3666", "fontStyle": "italic" } }
 		]
 	},
-
-	// TERMINAL
-	"terminal.integrated.fontSize": 14,
-	"terminal.integrated.tabs.enabled": false,
-	"terminal.integrated.stickyScroll.enabled": false,
-	"terminal.integrated.defaultProfile.osx": "zsh",
-	"terminal.integrated.cursorStyle": "line",
-	"terminal.integrated.shellIntegration.decorationsEnabled": "never",
-
+	
 	// FORMATTING
 	// editor
 	"editor.formatOnSave": false,
@@ -246,7 +246,6 @@
 	// EDIT ME: 'Contents/Resources/app/out/main.js'
 	// ADD FRAME INFO:  sed -i 's/webPreferences/frame:!1,webPreferences/'
 	"window.titleBarStyle": "native",
-	"window.zoomLevel": 0,
 	"window.commandCenter": false,
 	"window.density.editorTabHeight": "compact",
 	"window.openFilesInNewWindow": "off",
@@ -272,11 +271,7 @@
 	"breadcrumbs.filePath": "off",
 
 	// WORKBENCH
-	// themes
-	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
-	"workbench.colorTheme": "Moegi Black",
-
-	// UI
+	// ui
 	"workbench.sideBar.location": "right",
 	"workbench.statusBar.visible": false,
 	"workbench.editor.customLabels.enabled": true,
@@ -384,10 +379,7 @@
 
 	// search
 	"editor.find.autoFindInSelection": "multiline",
-
-	// font
-	"editor.fontSize": 13,
-
+	
 	// etc
 	"editor.codeActionsOnSave": {},
 	"editor.lineHeight": 0,
@@ -412,6 +404,13 @@
 	"editor.inlineSuggest.enabled": false,
 	"editor.minimap.enabled": false,
 	"editor.showFoldingControls": "never",
+
+	// TERMINAL
+	"terminal.integrated.tabs.enabled": false,
+	"terminal.integrated.stickyScroll.enabled": false,
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
 	// DIFF EDITOR
 	"diffEditor.renderSideBySide": true,
