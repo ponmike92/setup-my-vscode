@@ -3138,11 +3138,11 @@
 		"command": "-cloak.toggleSecrets"
 	},
 	{
-		"key": "alt+cmd+h",
-		"command": "cloak.hideSecrets"
-	},
-	{
 		"key": "cmd+g s",
 		"command": "git.stageAll"
+	},
+	{
+		"key": "alt+cmd+h",
+		"command": "cloak.hideSecrets"
 	}
 ]

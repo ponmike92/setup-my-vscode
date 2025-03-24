@@ -717,7 +717,7 @@
 	// Regex Robin
 	"regexrobin.rules": [
 		{
-		"regex": "^# (?:A!|I!)\\s*\\n(?:#.*(?:\\n|$))+",
+		"regex": "^# (?:A!|I!)\\s*\\n(?:(?:^#.*(?:\\n|$)))+",
 		"regexFlags": { "multiline": true },
 		"editor": [ { "color": "#F55A8C" } ]
 		},
