@@ -458,7 +458,7 @@
 
 	// WINDOW
 	// EDIT ME: 'Contents/Resources/app/out/main.js'
-	// ADD FRAME INFO:  sed -i 's/webPreferences/frame:!1,webPreferences/'
+	//   sed -i 's/webPreferences/frame:!1,webPreferences/'
 	"window.titleBarStyle": "native",
 	"window.commandCenter": false,
 	"window.density.editorTabHeight": "compact",
