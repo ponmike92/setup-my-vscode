@@ -1,8 +1,8 @@
 # Настраиваем VSCode
 
-- `extensions.txt`
-- `keybindings.json`
-- `settings.json`
+- `extensions.txt`  устанавливаем плагины
+- `keybindings.json` биндим хоткеи
+- `settings.json` настраиваем vscode
 
 ## Ставим все плагины разом
 
