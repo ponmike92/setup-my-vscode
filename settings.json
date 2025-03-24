@@ -131,107 +131,24 @@
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
 			// markdown
-			{
-				"scope": "text.html.markdown",
-				"settings": {
-					"foreground": "#ffffffdd"
-				}
-			},
-			{
-				"scope": "punctuation.definition.heading.markdown",
-				"settings": {
-					"foreground": "#ffffff55"
-					// "fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "heading.1.markdown",
-				"settings": {
-					// "foreground": "#d93677",
-					"foreground": "#00fbff",
-					// "fontStyle": ""
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "heading.2.markdown",
-				"settings": {
-					// "foreground": "#b5379f",
-					"foreground": "#25d0ee",
-					// "fontStyle": ""
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "heading.3.markdown",
-				"settings": {
-					// "foreground": "#8a3fac",
-					"foreground": "#36a4d3",
-					// "fontStyle": ""
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "heading.4.markdown",
-				"settings": {
-					// "foreground": "#5c479d",
-					"foreground": "#3876ae",
-					// "fontStyle": ""
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "heading.5.markdown",
-				"settings": {
-					// "foreground": "#2f467c",
-					"foreground": "#2c4380",
-					"fontStyle": "bold"
-					// "fontStyle": ""
-				}
-			},
-			{
-				"scope": "heading.6.markdown",
-				"settings": {
-					// "foreground": "#083d54",
-					// "foreground": "#130047"
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "markup.bold.markdown",
-				"settings": {
-					"foreground": "#d93677",
-					"fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "punctuation.definition.bold.markdown",
-				"settings": {
-					"foreground": "#666666"
-					// "fontStyle": "bold"
-				}
-			},
-			{
-				"scope": "markup.italic.markdown",
-				"settings": {
-					"foreground": "#e1a433"
-				}
-			},
-			{
-				"scope": "punctuation.definition.italic.markdown",
-				"settings": {
-					"foreground": "#666666"
-					// "fontStyle": "bold"
-				}
-			},
+			{ "scope": "text.html.markdown", "settings": { "foreground": "#ffffffdd" } },
+			{ "scope": "heading.1.markdown", "settings": { "foreground": "#00fbff", "fontStyle": "bold" } },
+			{ "scope": "heading.2.markdown", "settings": { "foreground": "#25d0ee", "fontStyle": "bold" } },
+			{ "scope": "heading.3.markdown", "settings": { "foreground": "#36a4d3", "fontStyle": "bold" } },
+			{ "scope": "heading.4.markdown", "settings": { "foreground": "#3876ae", "fontStyle": "bold" } },
+			{ "scope": "heading.5.markdown", "settings": { "foreground": "#2c4380", "fontStyle": "bold" } },
+			{ "scope": "heading.6.markdown", "settings": { "fontStyle": "bold" } },
+			{ "scope": "markup.bold.markdown", "settings": { "foreground": "#d93677", "fontStyle": "bold" } },
+			{ "scope": "markup.italic.markdown", "settings": { "foreground": "#e1a433" } },
+			{ "scope": "punctuation.definition.heading.markdown", "settings": { "foreground": "#ffffff55" } },
+			{ "scope": "punctuation.definition.bold.markdown", "settings": { "foreground": "#666666" } },
+			{ "scope": "punctuation.definition.italic.markdown", "settings": { "foreground": "#666666" } },
+
 
 			// строки в кавычках
 			{
 				"scope": ["string.quoted.single", "string.quoted.double", "string.quoted.multi", "string.quoted.docstring.multi"],
-				"settings": {
-					"foreground": "#6a6e6c",
-					"fontStyle": "italic"
-				}
+				"settings": { "foreground": "#6a6e6c", "fontStyle": "italic" }
 			},
 			// кавычки у строк в кавычках
 			{
@@ -247,27 +164,12 @@
 					"foreground": "#404040"
 				}
 			},
-			// цвет запятых
-			{
-				"scope": ["punctuation.separator.comma", "punctuation.separator"],
-				"settings": {
-					"foreground": "#555555"
-				}
-			},
-			// комментарии
-			{
-				"scope": "comment.line",
-				"settings": {
-					"foreground": "#444444",
-					"fontStyle": "italic"
-				}
-			},
-			{
-				"scope": ["punctuation.definition.comment"],
-				"settings": {
-					"foreground": "#555555"
-				}
-			}
+			{ "scope": "punctuation.separator.comma", "settings": { "foreground": "#555555" } },
+			{ "scope": "punctuation.separator", "settings": { "foreground": "#555555" } },
+
+			{ "scope": "comment.line", "settings": { "foreground": "#444444", "fontStyle": "italic" } },
+			{ "scope": ["punctuation.definition.comment"], "settings": { "foreground": "#555555" } }
+
 		]
 	},
 
@@ -522,7 +424,7 @@
 	"Lua.completion.showWord": "Disable",
 	"Lua.hint.arrayIndex": "Disable",
 	"Lua.hint.paramName": "Disable",
-	"workbench.colorTheme": "Moegi Black",
+	"workbench.colorTheme": "Moegi Dark",
 	"notebook.confirmDeleteRunningCell": false,
 	"workbench.activityBar.location": "hidden",
 	"workbench.statusBar.visible": false,
@@ -559,7 +461,7 @@
 	"editor.acceptSuggestionOnEnter": "on",
 	"editor.wordBasedSuggestions": "matchingDocuments",
 
-	// editor - word wraps to another line
+	// editor - word wraps
 	"editor.wordWrap": "wordWrapColumn",
 	"editor.wrappingIndent": "same",
 	"editor.wordWrapColumn": 120,
@@ -574,8 +476,8 @@
 
 	// editor - folding
 	"editor.foldingStrategy": "auto",
-	
-	// editor - 
+
+	// editor - numbering
 	"editor.lineNumbers": "off",
 	"editor.glyphMargin": true,
 	"editor.lightbulb.enabled": "off",
@@ -629,6 +531,6 @@
 	// plugin: Bracket Highlighter
 	"BracketHighlighter.textColor": "#ac2e56",
 
-	// plugin: 
+	// plugin:
 	"markdown.extension.toc.plaintext": true
 }
