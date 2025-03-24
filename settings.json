@@ -1,14 +1,6 @@
 {
-	// defaults
-	"files.defaultLanguage": "markdown",
-
 	"update.mode": "manual",
 
-	// no title bar
-	// NEED TO EDIT
-	// IN THIS FILE: 'Contents/Resources/app/out/main.js'
-	// ADD FRAME INFO:  sed -i 's/webPreferences/frame:!1,webPreferences/'
-	"window.titleBarStyle": "native",
 
 	// color manager
 	"color-manager.styles": {
@@ -167,12 +159,9 @@
 		]
 	},
 
-	"window.zoomLevel": 0,
 	"editor.fontSize": 13,
 
 	// windows & visibility
-	"window.commandCenter": false,
-	"window.density.editorTabHeight": "compact",
 	"breadcrumbs.enabled": false,
 
 	"breadcrumbs.icons": false,
@@ -208,8 +197,6 @@
 	},
 
 	// windows & behaviour
-	"window.openFilesInNewWindow": "off",
-	"window.nativeTabs": false,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 
 	// tabs
@@ -275,16 +262,6 @@
 	"git.decorations.enabled": true,
 	"git.timeline.showAuthor": false,
 	"git.timeline.showUncommitted": true,
-
-	// new opens
-	"window.openFoldersInNewWindow": "off",
-
-	// associations
-	"files.associations": {
-		"*.yazi": "toml",
-		"*.sntheme": "json"
-	},
-	"files.autoSave": "afterDelay",
 
 	// extensions
 	"extensions.ignoreRecommendations": true,
@@ -394,6 +371,19 @@
 	"Lua.hint.paramName": "Disable",
 	"notebook.confirmDeleteRunningCell": false,
 
+	// WINDOW
+	// no title bar
+	// NEED TO EDIT
+	// IN THIS FILE: 'Contents/Resources/app/out/main.js'
+	// ADD FRAME INFO:  sed -i 's/webPreferences/frame:!1,webPreferences/'
+	"window.titleBarStyle": "native",
+	"window.zoomLevel": 0,
+	"window.commandCenter": false,
+	"window.density.editorTabHeight": "compact",
+	"window.openFilesInNewWindow": "off",
+	"window.nativeTabs": false,
+	"window.openFoldersInNewWindow": "off",
+
 	// WORKBENCH
 	// themes
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
@@ -419,6 +409,14 @@
 	"workbench.tree.enableStickyScroll": false,
 	"workbench.quickOpen.closeOnFocusLost": false,
 	
+	// FILES
+	"files.exclude": {},
+	"files.defaultLanguage": "markdown",
+	"files.associations": {
+		"*.yazi": "toml",
+		"*.sntheme": "json"
+	},
+	"files.autoSave": "afterDelay",
 
 	// EXPLORER
 	"explorer.openEditors.minVisible": 9,
@@ -433,7 +431,6 @@
 	"explorer.confirmDragAndDrop": false,
 	"explorer.autoReveal": false,
 	"explorer.confirmPasteNative": false,
-	"files.exclude": {},
 
 	// EDITOR 
 	// autocomplete & suggestions
