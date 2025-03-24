@@ -494,6 +494,14 @@
 		}
 	},
 
+	// Indented Block Higlighting #F55A8C
+	"blockhighlight.background": ["200", "100", "255", ".04"],
+	"blockhighlight.accentCurrentLine": false,
+	"blockhighlight.isWholeLine": true,
+
+	// Quick Dim
+	"quickDim.opacity": 0.15,
+
 	// ?
 	"workbench.activityBar.location": "hidden"
 }

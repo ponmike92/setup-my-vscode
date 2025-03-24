@@ -189,38 +189,6 @@
 		}
 	},
 	// dimmer
-	{
-		"key": "cmd+d",
-		"command": "dimmer.ToggleDimmer"
-	},
-	{
-		"key": "alt+cmd+d",
-		"when": "editorTextFocus",
-		"command": "toggle",
-		"args": {
-			"id": "dimming_by_regex_on_off",
-			"value": [
-				{
-					"[lua]": {
-						"editor.defaultFormatter": "JohnnyMorganz.stylua"
-					}
-				},
-				{
-					"[lua]": {
-						"editor.defaultFormatter": "JohnnyMorganz.stylua",
-						"dim.rules": [
-							{
-								"rule": "^\\s+.*$"
-							},
-							{
-								"rule": "^\\s*end"
-							}
-						]
-					}
-				}
-			]
-		}
-	},
 	// lines
 	{
 		"key": "shift+cmd+l",
@@ -2369,10 +2337,6 @@
 		"when": "textInputFocus"
 	},
 	{
-		"key": "cmd+u",
-		"command": "blockman.toggleEnableDisable"
-	},
-	{
 		"key": "shift+cmd+i",
 		"command": "-workbench.panel.chatEditing",
 		"when": "workbench.panel.chat.view.edits.active"
@@ -3185,5 +3149,9 @@
 	{
 		"key": "cmd+e",
 		"command": "editor.action.marker.next"
+	},
+	{
+		"key": "cmd+d",
+		"command": "quickDim.dim"
 	}
 ]
