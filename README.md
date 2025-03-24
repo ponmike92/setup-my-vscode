@@ -1,13 +1,9 @@
-# Настраиваем VSCode как у Миши
+# Setup-My-Vscode
 
-- `extensions.txt` — устанавливаем плагины.
-- `keybindings.json` — биндим хоткеи.
-- `settings.json` — настраиваем vscode.
+- `extensions.txt`
+- `keybindings.json`
+- `settings.json`
 
-## Установливаем плагины (автоматически)
-
-1. Открываем терминал.
-2. Вбиваем:
 
   ```bash
   cat extensions.txt | xargs -L 1 code --install-extension
