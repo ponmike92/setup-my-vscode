@@ -1965,7 +1965,7 @@
 	},
 	{
 		"key": "cmd+down",
-		"command": "-list.select",
+		"command": "list.select",
 		"when": "listFocus && !inputFocus && !treestickyScrollFocused"
 	},
 	{
