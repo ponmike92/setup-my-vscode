@@ -1,9 +1,10 @@
 {
 	// FONT & THEME
-	"editor.fontSize": 14,
+	"editor.fontSize": 15,
 	"terminal.integrated.fontSize": 13,
 	"scm.inputFontSize": 14,
 	"window.zoomLevel": 0,
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
 	"workbench.colorTheme": "Moegi Black",
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
 	
@@ -12,6 +13,9 @@
 
 	// COLORS
 	"workbench.colorCustomizations": {
+		// cursor
+		"editorCursor.foreground": "#c75f80",
+
 		// widgets
 		"quickInput.background": "#181818",
 
@@ -378,7 +382,7 @@
 	// JSON & YAML
 	"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 	"[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	"[yaml]": { "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter" },
+	// "[yaml]": { "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter" },
 
 	// JS & TS
 	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -542,7 +546,6 @@
 	"explorer.openEditors.visible": 9,
 	"explorer.decorations.badges": true,
 	"explorer.decorations.colors": false,
-	"explorer.excludeGitIgnore": true,
 	"explorer.confirmDelete": false,
 	"explorer.compactFolders": false,
 	"explorer.confirmDragAndDrop": false,
@@ -730,5 +733,7 @@
 
 	// Quick Dim
 	"quickDim.opacity": 0.15,
-	"workbench.activityBar.location": "hidden"
+	"workbench.activityBar.location": "hidden",
+	"explorer.excludeGitIgnore": true,
+	"applescript.showNotifications": false
 }
