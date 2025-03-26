@@ -14,7 +14,7 @@
 	// COLORS
 	"workbench.colorCustomizations": {
 		// cursor
-		"editorCursor.foreground": "#c75f80",
+		"editorCursor.foreground": "#eeeeee",
 
 		// widgets
 		"quickInput.background": "#181818",
