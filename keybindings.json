@@ -203,6 +203,21 @@
 		}
 	},
 	{
+		"key": "alt+cmd+j",
+		"command": "toggle",
+		"args": {
+			"id": "word_suggestions",
+			"value": [
+				{
+					"editor.suggest.showWords": true
+				},
+				{
+					"editor.suggest.showWords": false
+				}
+			]
+		}
+	},
+	{
 		"key": "shift+cmd+y",
 		"command": "toggle",
 		"when": "editorTextFocus",
@@ -1179,8 +1194,8 @@
 	},
 	{
 		"key": "cmd+j",
-		"command": "focusSuggestion",
-		"when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+		"command": "editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
 	},
 	{
 		"key": "ctrl+space",
