@@ -516,7 +516,8 @@
 	"files.defaultLanguage": "markdown",
 	"files.associations": {
 		"*.yazi": "toml",
-		"*.sntheme": "json"
+		"*.sntheme": "json",
+		"*.ahcommand": "javascript"
 	},
 	"files.autoSave": "afterDelay",
 
