@@ -726,18 +726,18 @@
 		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#CAFEFE" }]
+			"editor": [{ "color": "#cccccc" }]
 		},
 		{
 			"regex": ".*AI!.*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#CAFEFE", "fontWeight": "bold" }]
+			"editor": [{ "color": "#F55A8C", "fontWeight": "bold" }]
 		}
 	],
 
 	// Quick Dim
 	"quickDim.opacity": 0.12,
-	"workbench.activityBar.location": "hidden",
 	"explorer.excludeGitIgnore": true,
-	"applescript.showNotifications": false
+	"applescript.showNotifications": false,
+	"workbench.activityBar.location": "hidden"
 }
