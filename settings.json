@@ -493,10 +493,13 @@
 	"workbench.sideBar.location": "right",
 	"workbench.statusBar.visible": false,
 	"workbench.editor.customLabels.enabled": true,
-	"workbench.editor.enablePreview": false,
 	"workbench.editor.customLabels.patterns": {
 		"**": "${filename}                                                                                                                                                                                                                                                            "
 	},
+	// file opens
+	"workbench.editor.revealIfOpen": true,
+	"workbench.editor.enablePreview": false,
+	// "workbench.editor.enablePreviewFromQuickOpen": false,
 
 	// redundant
 	"workbench.tree.enableStickyScroll": false,
@@ -557,7 +560,7 @@
 	// autocomplete & suggestions
 	"editor.inlineSuggest.showToolbar": "never",
 	"editor.snippetSuggestions": "none",
-	"editor.suggest.showWords": true,
+	"editor.suggest.showWords": false,
 	"editor.suggestOnTriggerCharacters": false,
 	"editor.suggestSelection": "first",
 	"editor.quickSuggestionsDelay": 0,
@@ -721,19 +724,19 @@
 	// Regex Robin
 	"regexrobin.rules": [
 		{
-		"regex": "^# (?:A!|I!)\\s*\\n(?:(?:^#.*(?:\\n|$)))+",
-		"regexFlags": { "multiline": true },
-		"editor": [ { "color": "#F55A8C" } ]
+			"regex": ".*(?:A!|I!).*(?:\n.+)*",
+			"regexFlags": { "multiline": true },
+			"editor": [{ "color": "#CAFEFE" }]
 		},
 		{
-		"regex": "^# (?:AI!|AI!)\\s*\\n(?:#.*(?:\\n|$))+",
-		"regexFlags": { "multiline": true },
-		"editor": [ { "color": "#F55A8C", "fontWeight": "bold" } ]
+			"regex": ".*AI!.*(?:\n.+)*",
+			"regexFlags": { "multiline": true },
+			"editor": [{ "color": "#CAFEFE", "fontWeight": "bold" }]
 		}
 	],
 
 	// Quick Dim
-	"quickDim.opacity": 0.15,
+	"quickDim.opacity": 0.12,
 	"workbench.activityBar.location": "hidden",
 	"explorer.excludeGitIgnore": true,
 	"applescript.showNotifications": false

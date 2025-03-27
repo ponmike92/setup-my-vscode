@@ -387,7 +387,8 @@
 		"when": "editorTextFocus",
 		"command": "extension.multiCommand.execute",
 		"args": {
-			"sequence": ["bookmarks.jumpToPrevious", "scroll-faster.down"]
+			// "sequence": ["bookmarks.jumpToPrevious", "scroll-faster.down"]
+			"sequence": ["bookmarks.jumpToPrevious"]
 		}
 	},
 	{
@@ -395,7 +396,8 @@
 		"when": "editorTextFocus",
 		"command": "extension.multiCommand.execute",
 		"args": {
-			"sequence": ["bookmarks.jumpToNext", "scroll-faster.down"]
+			// "sequence": ["bookmarks.jumpToNext", "scroll-faster.down"]
+			"sequence": ["bookmarks.jumpToNext"]
 		}
 	},
 	// {
@@ -634,12 +636,8 @@
 		"when": "textInputFocus"
 	},
 	{
-		"key": "ctrl+v",
-		"command": "workbench.action.splitEditorDown"
-	},
-	{
 		"key": "ctrl+b",
-		"command": "workbench.action.splitEditorRight"
+		"command": "workbench.action.splitEditorDown"
 	},
 	{
 		"key": "cmd+k down",
@@ -778,14 +776,6 @@
 	{
 		"key": "ctrl+9",
 		"command": "-workbench.action.openEditorAtIndex9"
-	},
-	{
-		"key": "ctrl+shift+right",
-		"command": "workbench.action.moveEditorToRightGroup"
-	},
-	{
-		"key": "ctrl+shift+left",
-		"command": "workbench.action.moveEditorToLeftGroup"
 	},
 	{
 		"key": "ctrl+f",
@@ -3159,5 +3149,13 @@
 	{
 		"key": "alt+cmd+h",
 		"command": "cloak.hideSecrets"
+	},
+	{
+		"key": "ctrl+shift+left",
+		"command": "workbench.action.moveEditorToAboveGroup"
+	},
+	{
+		"key": "ctrl+shift+right",
+		"command": "workbench.action.moveEditorToBelowGroup"
 	}
 ]
