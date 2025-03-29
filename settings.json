@@ -723,7 +723,7 @@
 		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#cccccc" }]
+			"editor": [{ "color": "#bbbbbb" }]
 		},
 		{
 			"regex": ".*AI!.*(?:\n.+)*",
