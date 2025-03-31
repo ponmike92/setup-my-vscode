@@ -1,10 +1,11 @@
 {
 	// FONT & THEME
 	"editor.fontSize": 14,
-	"terminal.integrated.fontSize": 13,
+	"terminal.integrated.fontSize": 15,
 	"scm.inputFontSize": 14,
 	"window.zoomLevel": 0,
 	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"workbench.colorTheme": "Moegi Black",
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
 	
@@ -18,13 +19,27 @@
 
 		// widgets
 		"quickInput.background": "#181818",
+		
+		// activity bar
+		"activityBar.background": "#141414",
+		"activityBar.border": "#00000000",
+		"activityBarBadge.background": "#181818",
+		"activityBarBadge.foreground": "#484848",
+
 		// status bar
 		"statusBar.background": "#202020",
 		"statusBar.foreground": "#484848",
 		"statusBar.border": "#00000000",
 
 		// terminal
-		"terminal.background": "#161616",
+		"terminal.background": "#202020",
+		"panel.border": "#303030",
+		"panel.background": "#202020",
+		"panelTitle.activeForeground": "#00000000",
+		"dropdown.background": "#00000000",
+		"dropdown.foreground": "#00000000",
+		"dropdown.border": "#00000000",
+		"dropdown.listFocusIconForeground": "#00000000",
 
 		// diff editor
 		"diffEditor.removedTextBackground": "#ac2e5620",
