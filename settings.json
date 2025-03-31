@@ -31,6 +31,14 @@
 		"statusBar.foreground": "#484848",
 		"statusBar.border": "#00000000",
 
+		// suggestions
+		"editorSuggestWidget.background": "#191919",
+		"editorSuggestWidget.selectedBackground": "#191919",
+		"editorSuggestWidget.foreground": "#484848",
+		"editorSuggestWidget.selectedForeground": "#ffffff",
+		"editorSuggestWidget.focusHighlightForeground": "#999999",
+		"editorSuggestWidget.highlightForeground": "#999999",
+
 		// terminal
 		"terminal.background": "#202020",
 		"panel.border": "#303030",
