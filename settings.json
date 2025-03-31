@@ -363,7 +363,7 @@
 	// editor
 	"editor.formatOnSave": false,
 	"editor.formatOnPaste": true,
-	"editor.formatOnType": true,
+	"editor.formatOnType": false,
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
@@ -394,6 +394,22 @@
 	"typescript.format.semicolons": "remove",
 	"typescript.preferences.quoteStyle": "single",
 
+	// python
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff"
+	},
+	"python.analysis.autoIndent": false,
+
+	// markdown
+	"[markdown]": {
+		"editor.detectIndentation": true,
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2
+	},
+
+	// shell
+	"[shellscript]": { "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode" },
+
 	// Lua
 	"[lua]": { "editor.defaultFormatter": "JohnnyMorganz.stylua" },
 	"Lua.diagnostics.enable": false,
@@ -422,22 +438,6 @@
 	"Lua.completion.showWord": "Disable",
 	"Lua.hint.arrayIndex": "Disable",
 	"Lua.hint.paramName": "Disable",
-
-	// shell
-	"[shellscript]": { "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode" },
-
-	// python
-	"[python]": {
-		"editor.defaultFormatter": "charliermarsh.ruff"
-	},
-	"python.analysis.autoIndent": false,
-
-	// markdown
-	"[markdown]": {
-		"editor.detectIndentation": true,
-		"editor.insertSpaces": true,
-		"editor.tabSize": 2
-	},
 
 	// DEBUG
 	"debug.focusWindowOnBreak": false,
