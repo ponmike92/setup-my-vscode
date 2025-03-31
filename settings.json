@@ -721,6 +721,11 @@
 	// Regex Robin
 	"regexrobin.rules": [
 		{
+			"regex": "(?<=```)[a-zA-Z0-9+_-]+",
+			"regexFlags": { "multiline": true },
+			"editor": [{ "color": "#333333", "fontWeight": "bold" }]
+		},
+		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
 			"editor": [{ "color": "#bbbbbb" }]
