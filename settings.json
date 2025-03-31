@@ -18,6 +18,10 @@
 
 		// widgets
 		"quickInput.background": "#181818",
+		// status bar
+		"statusBar.background": "#202020",
+		"statusBar.foreground": "#484848",
+		"statusBar.border": "#00000000",
 
 		// terminal
 		"terminal.background": "#161616",
