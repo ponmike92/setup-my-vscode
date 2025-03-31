@@ -490,9 +490,12 @@
 	"breadcrumbs.filePath": "off",
 
 	// WORKBENCH
+	// language
+	"workbench.editor.languageDetection": true,
+	"workbench.editor.preferHistoryBasedLanguageDetection": true,
+
 	// ui
 	"workbench.sideBar.location": "right",
-	"workbench.statusBar.visible": false,
 	"workbench.editor.customLabels.enabled": true,
 	"workbench.editor.customLabels.patterns": {
 		"**": "${filename}                                                                                                                                                                                                                                                            "
@@ -517,7 +520,6 @@
 
 	// FILES
 	"files.exclude": {},
-	"files.defaultLanguage": "markdown",
 	"files.associations": {
 		"*.yazi": "toml",
 		"*.sntheme": "json",
@@ -744,5 +746,5 @@
 	// Quick Dim
 	"quickDim.opacity": 0.12,
 	"applescript.showNotifications": false,
-	"workbench.activityBar.location": "hidden"
+	"workbench.activityBar.location": "hidden",
 }
