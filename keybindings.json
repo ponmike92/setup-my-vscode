@@ -161,6 +161,11 @@
 		"command": "-workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active"
 	},
+	// time report
+	{
+		"key": "shift+cmd+c",
+		"command": "time.showReport"
+	},
 	// colors
 	{
 		"key": "cmd+k",
