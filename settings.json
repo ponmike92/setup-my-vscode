@@ -512,10 +512,22 @@
 	"breadcrumbs.showConstructors": false,
 	"breadcrumbs.filePath": "off",
 
+	// FILES
+	"files.exclude": {},
+	"files.associations": {
+		"tmux.conf": "shellscript",
+		"*.yazi": "toml",
+		"*.sntheme": "json",
+		"*.ahcommand": "javascript",
+		"*.ini": "plaintext"
+	},
+	"files.autoSave": "afterDelay",
+
 	// WORKBENCH
 	// language
 	"workbench.editor.languageDetection": true,
 	"workbench.editor.preferHistoryBasedLanguageDetection": true,
+	"workbench.editor.historyBasedLanguageDetection": true, 
 
 	// ui
 	"workbench.sideBar.location": "right",
@@ -540,15 +552,6 @@
 	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.editor.labelFormat": "short",
 	"workbench.quickOpen.closeOnFocusLost": false,
-
-	// FILES
-	"files.exclude": {},
-	"files.associations": {
-		"*.yazi": "toml",
-		"*.sntheme": "json",
-		"*.ahcommand": "javascript"
-	},
-	"files.autoSave": "afterDelay",
 
 	// EXPLORER
 	// sorting
