@@ -426,7 +426,22 @@
 		"command": "workbench.action.editor.nextChange",
 		"when": "editorTextFocus && !textCompareEditorActive"
 	},
-
+	// references
+	{
+		"key": "shift+cmd+r",
+		"command": "references-view.findReferences",
+		"when": "editorHasReferenceProvider"
+	},
+	{
+		"key": "alt+cmd+down",
+		"command": "references-view.next",
+		"when": "reference-list.hasResult && references-view.canNavigate && view.references-view.tree.visible"
+	},
+	{
+		"key": "alt+cmd+up",
+		"command": "references-view.prev",
+		"when": "reference-list.hasResult && references-view.canNavigate && view.references-view.tree.visible"
+	},
 	// find
 	{
 		"key": "escape",
@@ -2986,11 +3001,6 @@
 		"command": "editor.action.formatSelection"
 	},
 	{
-		"key": "shift+cmd+r",
-		"command": "references-view.findReferences",
-		"when": "editorHasReferenceProvider"
-	},
-	{
 		"key": "shift+alt+f12",
 		"command": "-references-view.findReferences",
 		"when": "editorHasReferenceProvider"
@@ -3004,11 +3014,6 @@
 		"key": "f2",
 		"command": "-editor.action.rename",
 		"when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "alt+r",
-		"command": "references-view.next",
-		"when": "reference-list.hasResult && references-view.canNavigate"
 	},
 	{
 		"key": "f4",
@@ -3142,5 +3147,18 @@
 	{
 		"key": "ctrl+shift+right",
 		"command": "workbench.action.moveEditorToBelowGroup"
+	},
+	{
+		"key": "shift+cmd+m",
+		"command": "infranodus-graph-view.graphView.focus"
+	},
+	{
+		"key": "alt+cmd+r",
+		"command": "references-view.clear"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-notebook.cell.detectLanguage",
+		"when": "notebookCellEditable && notebookEditable"
 	}
 ]
