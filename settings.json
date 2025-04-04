@@ -752,16 +752,25 @@
 
 	// Regex Robin
 	"regexrobin.rules": [
+		// timecodes
+		{
+			"regex": "^\\d{2}:\\d{2}(?::\\d{2})?",
+			"regexFlags": { "multiline": true },
+			"editor": [{ "color": "#666666", "fontWeight": "bold" }]
+		},
+		// code language .md
 		{
 			"regex": "(?<=```)[a-zA-Z0-9+_-]+",
 			"regexFlags": { "multiline": true },
 			"editor": [{ "color": "#333333", "fontWeight": "bold" }]
 		},
+		// aider
 		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#bbbbbb" }]
+			"editor": [{ "color": "#aaaaaa" }]
 		},
+		// aider
 		{
 			"regex": ".*AI!.*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
