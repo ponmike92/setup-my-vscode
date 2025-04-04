@@ -13,7 +13,7 @@
 	},
 	// explorer
 	{
-		"key": "shift+cmd+h",
+		"key": "shift+cmd+.",
 		"command": "explorer-gitignore.toggle"
 	},
 	{
@@ -268,26 +268,6 @@
 				},
 				{
 					"explorer.sortOrder": "modified"
-				}
-			]
-		}
-	},
-	{
-		"key": "shift+cmd+.",
-		"command": "toggle",
-		"args": {
-			"id": "hidden_files_visibility",
-			"value": [
-				{
-					"files.exclude": {}
-				},
-				{
-					"files.exclude": {
-						"**/.*": true,
-						"**/__pycache__": true,
-						"**/*.lock": true,
-						"**/pyproject.toml": true
-					}
 				}
 			]
 		}
