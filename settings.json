@@ -600,6 +600,8 @@
 	// Markdown All In One?
 	"markdown.extension.toc.plaintext": true,
 	"markdown.extension.print.theme": "dark",
+	"markdown.extension.bold.indicator": "**",
+	"markdown.extension.italic.indicator": "_",
 
 	// Markdown Preview Enchanced
 	"markdown-preview-enhanced.mermaidTheme": "dark",
