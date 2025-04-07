@@ -155,6 +155,15 @@
 		"command": "-git.unstageSelectedRanges",
 		"when": "isInDiffEditor && !operationInProgress"
 	},
+	// editor
+	{
+		"key": "ctrl+shift+right",
+		"command": "workbench.action.moveEditorToRightGroup"
+	},
+	{
+		"key": "ctrl+shift+left",
+		"command": "workbench.action.moveEditorToLeftGroup"
+	},
 	// terminal
 	{
 		"key": "cmd+`+shift",
@@ -3081,11 +3090,6 @@
 		"when": "config.interactiveWindow.executeWithShiftEnter && isCompositeNotebook && activeEditor == 'workbench.editor.repl'"
 	},
 	{
-		"key": "shift+cmd+i",
-		"command": "python.execInREPL",
-		"when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
-	},
-	{
 		"key": "shift+enter",
 		"command": "-python.execInREPL",
 		"when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
@@ -3141,14 +3145,6 @@
 		"command": "cloak.hideSecrets"
 	},
 	{
-		"key": "ctrl+shift+left",
-		"command": "workbench.action.moveEditorToAboveGroup"
-	},
-	{
-		"key": "ctrl+shift+right",
-		"command": "workbench.action.moveEditorToBelowGroup"
-	},
-	{
 		"key": "shift+cmd+m",
 		"command": "infranodus-graph-view.graphView.focus"
 	},
@@ -3160,5 +3156,10 @@
 		"key": "shift+alt+d",
 		"command": "-notebook.cell.detectLanguage",
 		"when": "notebookCellEditable && notebookEditable"
+	},
+	{
+		"key": "shift+cmd+i",
+		"command": "-workbench.action.chat.openEditSession",
+		"when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
 	}
 ]
