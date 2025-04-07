@@ -59,13 +59,13 @@
 		"dropdown.listFocusIconForeground": "#00000000",
 
 		// diff editor
-		"diffEditor.removedTextBackground": "#ac2e5620",
-		"diffEditor.removedLineBackground": "#ac2e5620",
+		"diffEditor.removedTextBackground": "#ac2e5615",
+		"diffEditor.removedLineBackground": "#ac2e5615",
 		"diffEditorGutter.removedLineBackground": "#ac2e5620",
 		"diffEditorOverview.removedForeground": "#ac2e56ff",
 
-		"diffEditor.insertedTextBackground": "#4A645940",
-		"diffEditor.insertedLineBackground": "#4A645940",
+		"diffEditor.insertedTextBackground": "#4A645915",
+		"diffEditor.insertedLineBackground": "#4A645910",
 		"diffEditorGutter.insertedLineBackground": "#4A645940",
 		"diffEditorOverview.insertedForeground": "#4A6459ff",
 
