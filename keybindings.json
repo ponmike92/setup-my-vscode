@@ -68,6 +68,16 @@
 			"sequence": ["workbench.action.focusActiveEditorGroup"]
 		}
 	},
+	// Python REPL
+	{
+		"key": "shift+enter",
+		"command": "-jupyter.execSelectionInteractive",
+		"when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !isCompositeNotebook && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+	},
+	{
+		"key": "shift+cmd+i",
+		"command": "python.execInREPL"
+	},
 	// git
 	{
 		"key": "cmd+g c",
