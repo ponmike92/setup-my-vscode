@@ -578,6 +578,28 @@
 		"markSection2AndTakeDiff": false
 	},
 
+	// gitmoji
+	"gitmoji.autoCommit": true,
+	"gitmoji.autoClose": true,
+	"gitmoji.customEmoji": true,
+	"gitmoji.customEmojiMap": [
+		{ "emoji": "🎉", "colon": ":tada:"                  , "text": "begin                                               " },
+		{ "emoji": "✨", "colon": ":sparkles:"              , "text": "feature                                             " },
+		{ "emoji": "♻️", "colon": ":recycle:"               , "text": "refactor                                            " },
+		{ "emoji": "🩹", "colon": ":adhesive_bandage:"      , "text": "fixy                                                " },
+		{ "emoji": "🐛", "colon": ":bug:"                   , "text": "fix                                                   " },
+		{ "emoji": "🔥", "colon": ":fire:"                  , "text": "delete                                              " },
+		{ "emoji": "🏗️", "colon": ":building_construction:" , "text": "restruct                                            " },
+		{ "emoji": "🥚", "colon": ":egg:" , "text": "                                                       " },
+		{ "emoji": "🙈", "colon": ":see_no_evil:"           , "text": "disable                                             " },
+		{ "emoji": "⏪️", "colon": ":rewind:"                , "text": "revert                                                " },
+		{ "emoji": "✅", "colon": ":white_check_mark:"      , "text": "test                                                 " },
+		{ "emoji": "💡", "colon": ":bulb:"                  , "text": "comment                                           " },
+		{ "emoji": "📝", "colon": ":memo:"                  , "text": "doc                                                    " },
+		{ "emoji": "📦️", "colon": ":package:"               , "text": "configure                                            " }
+	],
+
+
 	// Colorize (toggle in keybindings!)
 	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
 	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
