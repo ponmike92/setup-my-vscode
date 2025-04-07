@@ -70,6 +70,10 @@
 	},
 	// git
 	{
+		"key": "cmd+g c",
+		"command": "extension.gitmojiCommit"
+	},
+	{
 		"key": "shift+cmd+g",
 		"command": "workbench.view.scm"
 	},
@@ -92,10 +96,6 @@
 	{
 		"key": "cmd+g x",
 		"command": "git.unstageSelectedRanges"
-	},
-	{
-		"key": "cmd+g c",
-		"command": "git.commitStaged"
 	},
 	{
 		"key": "cmd+g r",
