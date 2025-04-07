@@ -98,7 +98,7 @@
 		"command": "git.unstageSelectedRanges"
 	},
 	{
-		"key": "cmd+g r",
+		"key": "cmd+g e",
 		"command": "git.commitAmend"
 	},
 
