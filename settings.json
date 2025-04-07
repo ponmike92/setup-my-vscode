@@ -197,20 +197,22 @@
 			{
 				"scope": "markup.bold.markdown",
 				"settings": {
-					"foreground": "#049E42",
+					"foreground": "#FC488A",
 					"fontStyle": "bold"
 				}
 			},
 			{
 				"scope": "markup.italic.markdown",
 				"settings": {
-					"foreground": "#e1a433"
+					"foreground": "#FFBF79",
+					"fontStyle": "bold"
 				}
 			},
 			{
 				"scope": "markup.strikethrough.markdown",
 				"settings": {
-					"foreground": "#d93677"
+					"foreground": "#049D57",
+					"fontStyle": "bold"
 				}
 			},
 			{
