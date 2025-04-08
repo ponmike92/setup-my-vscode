@@ -618,6 +618,15 @@
 	"colorize.enable_search_variables": true,
 	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
 
+	// Indent Rainbow
+	"indentRainbow.includedLanguages": ["json"],
+	"indentRainbow.ignoreErrorLanguages": ["json"],
+	"indentRainbow.colors": [
+		"rgba(68,68,68,0.00)", 
+		"rgba(68,68,68,0.08)", 
+		"rgba(68,68,68,0.00)", 
+		"rgba(68,68,68,0.08)"],
+
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
 	"bookmarks.gutterIconFillColor": "crimson",
