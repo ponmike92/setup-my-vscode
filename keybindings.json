@@ -68,14 +68,14 @@
 			"sequence": ["workbench.action.focusActiveEditorGroup"]
 		}
 	},
-	// Python REPL
+	// REPL Python
 	{
 		"key": "shift+enter",
 		"command": "-jupyter.execSelectionInteractive",
 		"when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !isCompositeNotebook && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
 	},
 	{
-		"key": "shift+cmd+i",
+		"key": "cmd+i",
 		"command": "python.execInREPL"
 	},
 	// git
@@ -3080,19 +3080,9 @@
 		"command": "projectManager.listFavoriteProjects#sideBarFavorites"
 	},
 	{
-		"key": "shift+cmd+i",
-		"command": "interactive.execute",
-		"when": "config.interactiveWindow.executeWithShiftEnter && isCompositeNotebook && activeEditor == 'workbench.editor.interactive'"
-	},
-	{
 		"key": "shift+enter",
 		"command": "-interactive.execute",
 		"when": "config.interactiveWindow.executeWithShiftEnter && isCompositeNotebook && activeEditor == 'workbench.editor.interactive'"
-	},
-	{
-		"key": "shift+cmd+i",
-		"command": "repl.execute",
-		"when": "config.interactiveWindow.executeWithShiftEnter && isCompositeNotebook && activeEditor == 'workbench.editor.repl'"
 	},
 	{
 		"key": "shift+enter",
@@ -3171,5 +3161,20 @@
 		"key": "shift+cmd+i",
 		"command": "-workbench.action.chat.openEditSession",
 		"when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat.start",
+		"when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat2.stop",
+		"when": "inlineChatHasEditsAgent && inlineChatVisible && chatEdits.requestCount == '0'"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat2.reveal",
+		"when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
 	}
 ]
