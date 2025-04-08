@@ -23,6 +23,13 @@
 
 	// COLORS
 	"workbench.colorCustomizations": {
+		// all
+		"foreground": "#666666",
+
+		// badges - warnings, errors
+		"list.errorForeground": "#ff878720",
+		"list.warningForeground": "#cca70020",
+
 		// cursor
 		"editorCursor.foreground": "#eeeeee",
 
@@ -35,11 +42,6 @@
 		"activityBarBadge.background": "#181818",
 		"activityBarBadge.foreground": "#484848",
 
-		// status bar
-		"statusBar.background": "#202020",
-		"statusBar.foreground": "#484848",
-		"statusBar.border": "#00000000",
-
 		// suggestions
 		"editorSuggestWidget.background": "#191919",
 		"editorSuggestWidget.selectedBackground": "#191919",
@@ -48,15 +50,24 @@
 		"editorSuggestWidget.focusHighlightForeground": "#999999",
 		"editorSuggestWidget.highlightForeground": "#999999",
 
-		// terminal
-		"terminal.background": "#202020",
+		// status bar
+		"statusBar.background": "#202020",
+		"statusBar.foreground": "#484848",
+		"statusBar.border": "#00000000",
+		
+		// terminal - panel above
 		"panel.border": "#303030",
 		"panel.background": "#202020",
 		"panelTitle.activeForeground": "#00000000",
+
+		// terminal - dropdown
 		"dropdown.background": "#00000000",
 		"dropdown.foreground": "#00000000",
 		"dropdown.border": "#00000000",
-		"dropdown.listFocusIconForeground": "#00000000",
+
+		// terminal
+		"terminal.background": "#202020",
+
 
 		// diff editor
 		"diffEditor.removedTextBackground": "#ac2e5615",
