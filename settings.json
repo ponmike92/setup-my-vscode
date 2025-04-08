@@ -565,6 +565,7 @@
 	"editor.showFoldingControls": "never",
 
 	// TERMINAL
+	"terminal.integrated.enablePersistentSessions": false,
 	"terminal.integrated.tabs.enabled": false,
 	"terminal.integrated.stickyScroll.enabled": false,
 	"terminal.integrated.defaultProfile.osx": "zsh",
