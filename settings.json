@@ -597,6 +597,7 @@
 		{ "emoji": "🎉", "colon": ":tada:"                  , "text": "begin                                               " },
 		{ "emoji": "✨", "colon": ":sparkles:"              , "text": "feature                                             " },
 		{ "emoji": "♻️", "colon": ":recycle:"               , "text": "refactor                                            " },
+		{ "emoji": "💄", "colon": ":lipstick:"               , "text": "stylize                                            " },
 		{ "emoji": "🩹", "colon": ":adhesive_bandage:"      , "text": "fixy                                                " },
 		{ "emoji": "🐛", "colon": ":bug:"                   , "text": "fix                                                   " },
 		{ "emoji": "🔥", "colon": ":fire:"                  , "text": "delete                                              " },
