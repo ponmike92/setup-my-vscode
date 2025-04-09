@@ -81,7 +81,10 @@
 	// git
 	{
 		"key": "cmd+g c",
-		"command": "extension.gitmojiCommit"
+		"command": "extension.multiCommand.execute",
+		"args": {
+			"sequence": ["workbench.action.terminal.new", "extension.gitmojiCommit"]
+		}
 	},
 	{
 		"key": "shift+cmd+g",
