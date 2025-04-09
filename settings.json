@@ -633,6 +633,15 @@
 	"bookmarks.gutterIconFillColor": "crimson",
 	"bookmarks.gutterIconBorderColor": "rgb(99, 40, 64)",
 
+	// File Tree Extractor
+	"fileTreeExtractor.ignoredItems": [
+		".git",
+		".venv",
+		".aider.*",
+		".ruff*",
+		".DS_Store"
+	],
+
 	// Scroll Faster
 	"scrollFaster.scrollByLines": 8,
 
