@@ -635,11 +635,14 @@
 
 	// File Tree Extractor
 	"fileTreeExtractor.ignoredItems": [
+		".DS_Store",
 		".git",
+		".gitignore",
 		".venv",
 		".aider.*",
 		".ruff*",
-		".DS_Store"
+		"CONVENTIONS.md",
+		"README.md",
 	],
 
 	// Scroll Faster
