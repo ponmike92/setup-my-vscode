@@ -182,7 +182,7 @@
 	},
 	// time report
 	{
-		"key": "shift+cmd+c",
+		"key": "shift+cmd+h",
 		"command": "time.showReport"
 	},
 	// colors
