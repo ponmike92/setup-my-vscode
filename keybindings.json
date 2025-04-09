@@ -185,6 +185,15 @@
 		"key": "shift+cmd+h",
 		"command": "time.showReport"
 	},
+	// tree extractor
+	{
+		"key": "shift+cmd+c",
+		"command": "fileTreeExtractor.copyFileTreeFromThisDir"
+	},
+	{
+		"key": "ctrl+alt+c",
+		"command": "-fileTreeExtractor.copyFileTree"
+	},
 	// colors
 	{
 		"key": "cmd+k",
