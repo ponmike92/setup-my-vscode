@@ -180,6 +180,37 @@
 		"command": "-workbench.action.terminal.toggleTerminal",
 		"when": "terminal.active"
 	},
+	{
+		"key": "shift+cmd+i",
+		"command": "workbench.action.terminal.new",
+		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+	},
+	// terminal - off
+	{
+		"key": "shift+cmd+i",
+		"command": "-workbench.action.chat.openEditSession",
+		"when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat.start",
+		"when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat2.stop",
+		"when": "inlineChatHasEditsAgent && inlineChatVisible && chatEdits.requestCount == '0'"
+	},
+	{
+		"key": "cmd+i",
+		"command": "-inlineChat2.reveal",
+		"when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
+	},
+	{
+		"key": "ctrl+shift+`",
+		"command": "-workbench.action.terminal.new",
+		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+	},
 	// time report
 	{
 		"key": "shift+cmd+h",
