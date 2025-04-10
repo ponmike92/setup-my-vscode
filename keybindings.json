@@ -13,15 +13,6 @@
 	},
 	// explorer
 	{
-		"key": "shift+cmd+.",
-		"command": "explorer-gitignore.toggle"
-	},
-	{
-		"key": "shift+cmd+e",
-		"when": "viewContainer.workbench.view.explorer.enabled",
-		"command": "-workbench.view.explorer"
-	},
-	{
 		"key": "shift+cmd+e",
 		"when": "explorerViewletVisible",
 		"command": "workbench.view.explorer"
@@ -33,6 +24,33 @@
 		"args": {
 			"sequence": ["workbench.view.explorer", "workbench.action.focusActiveEditorGroup"]
 		}
+	},
+	// explorer - ordering
+	{
+		"key": "shift+cmd+u",
+		"command": "toggle",
+		"args": {
+			"id": "explorer_files_order",
+			"value": [
+				{
+					"explorer.sortOrder": "default"
+				},
+				{
+					"explorer.sortOrder": "modified"
+				}
+			]
+		}
+	},
+	// explorer - gitignore
+	{
+		"key": "shift+cmd+.",
+		"command": "explorer-gitignore.toggle"
+	},
+	// explorer - etc
+	{
+		"key": "shift+cmd+e",
+		"when": "viewContainer.workbench.view.explorer.enabled",
+		"command": "-workbench.view.explorer"
 	},
 	{
 		"key": "ctrl+shift+alt+cmd+v",
@@ -80,27 +98,39 @@
 	},
 	// git
 	{
-		"key": "cmd+g c",
-		"command": "extension.multiCommand.execute",
-		"args": {
-			"sequence": ["workbench.action.terminal.new", "extension.gitmojiCommit"]
-		}
-	},
-	{
 		"key": "shift+cmd+g",
 		"command": "workbench.view.scm"
 	},
+	// git - commit
 	{
-		"key": "cmd+g p",
-		"command": "git.push"
+		"key": "cmd+g c",
+		"command": "autoCommit.commitStagedChanges"
 	},
-	{
-		"key": "cmd+g g",
-		"command": "git.pull"
-	},
+	// {
+	// 	"key": "cmd+g c",
+	// 	"command": "git.commitStaged"
+	// },
+	// git - view
 	{
 		"key": "cmd+g d",
 		"command": "git.openChange"
+	},
+	{
+		"key": "cmd+g v",
+		"command": "git.viewChanges"
+	},
+	{
+		"key": "cmd+g f",
+		"command": "git.viewStagedChanges"
+	},
+	// git - staging
+	{
+		"key": "cmd+g shift+s",
+		"command": "git.stageAll"
+	},
+	{
+		"key": "cmd+g s",
+		"command": "git.stage"
 	},
 	{
 		"key": "cmd+g a",
@@ -110,29 +140,30 @@
 		"key": "cmd+g x",
 		"command": "git.unstageSelectedRanges"
 	},
-	{
-		"key": "cmd+g e",
-		"command": "git.commitAmend"
-	},
-
-	{
-		"key": "cmd+g v",
-		"command": "git.viewChanges"
-	},
+	// git - undo/redo
 	{
 		"key": "cmd+g z",
 		"command": "git.revertSelectedRanges"
 	},
 	{
-		"key": "cmd+g f",
-		"command": "git.viewStagedChanges"
+		"key": "cmd+g e",
+		"command": "git.commitAmend"
 	},
 	{
 		"key": "cmd+g u",
 		"command": "workbench.action.terminal.sendSequence",
 		"args": { "text": "git reset --soft HEAD~1\n" }
 	},
-	// git (undo)
+	// git - pushpull
+	{
+		"key": "cmd+g p",
+		"command": "git.push"
+	},
+	{
+		"key": "cmd+g g",
+		"command": "git.pull"
+	},
+	// git - off
 	{
 		"key": "ctrl+shift+g",
 		"command": "-workbench.view.scm",
@@ -214,6 +245,11 @@
 		"command": "-workbench.action.terminal.new",
 		"when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
 	},
+	// infranodus
+	{
+		"key": "shift+cmd+m",
+		"command": "infranodus-graph-view.graphView.focus"
+	},
 	// time report
 	{
 		"key": "shift+cmd+h",
@@ -269,21 +305,7 @@
 			]
 		}
 	},
-	{
-		"key": "alt+cmd+j",
-		"command": "toggle",
-		"args": {
-			"id": "word_suggestions",
-			"value": [
-				{
-					"editor.suggest.showWords": true
-				},
-				{
-					"editor.suggest.showWords": false
-				}
-			]
-		}
-	},
+	// numlines & glyphs
 	{
 		"key": "shift+cmd+y",
 		"command": "toggle",
@@ -300,6 +322,7 @@
 			]
 		}
 	},
+	// word wraping
 	{
 		"key": "shift+cmd+;",
 		"command": "toggle",
@@ -319,22 +342,22 @@
 			]
 		}
 	},
-	{
-		"key": "shift+cmd+u",
-		"command": "toggle",
-		"args": {
-			"id": "explorer_files_order",
-			"value": [
-				{
-					"explorer.sortOrder": "default"
-				},
-				{
-					"explorer.sortOrder": "modified"
-				}
-			]
-		}
-	},
 	// move up/down
+	{
+		"key": "cmd+up",
+		"command": "betterPageUp",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "cmd+down",
+		"command": "betterPageDown"
+	},
+	// move up/down - off
+	{
+		"key": "pageup",
+		"command": "-betterPageUp",
+		"when": "textInputFocus"
+	},
 	{
 		"key": "alt+up",
 		"command": "-editor.action.moveLinesUpAction",
@@ -344,20 +367,6 @@
 		"key": "alt+down",
 		"command": "-editor.action.moveLinesDownAction",
 		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "cmd+up",
-		"command": "betterPageUp",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "pageup",
-		"command": "-betterPageUp",
-		"when": "textInputFocus"
-	},
-	{
-		"key": "cmd+down",
-		"command": "betterPageDown"
 	},
 	// select by regex
 	{
@@ -518,10 +527,26 @@
 	},
 	// suggestions
 	{
+		"key": "alt+cmd+j",
+		"command": "toggle",
+		"args": {
+			"id": "word_suggestions",
+			"value": [
+				{
+					"editor.suggest.showWords": true
+				},
+				{
+					"editor.suggest.showWords": false
+				}
+			]
+		}
+	},
+	{
 		"key": "escape",
 		"command": "hideSuggestWidget",
 		"when": "suggestWidgetVisible"
 	},
+	// etc.
 	{
 		"key": "shift+escape",
 		"command": "-closeFindWidget",
@@ -3180,16 +3205,8 @@
 		"command": "-cloak.toggleSecrets"
 	},
 	{
-		"key": "cmd+g s",
-		"command": "git.stageAll"
-	},
-	{
 		"key": "alt+cmd+h",
 		"command": "cloak.hideSecrets"
-	},
-	{
-		"key": "shift+cmd+m",
-		"command": "infranodus-graph-view.graphView.focus"
 	},
 	{
 		"key": "alt+cmd+r",
@@ -3199,25 +3216,5 @@
 		"key": "shift+alt+d",
 		"command": "-notebook.cell.detectLanguage",
 		"when": "notebookCellEditable && notebookEditable"
-	},
-	{
-		"key": "shift+cmd+i",
-		"command": "-workbench.action.chat.openEditSession",
-		"when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
-	},
-	{
-		"key": "cmd+i",
-		"command": "-inlineChat.start",
-		"when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
-	},
-	{
-		"key": "cmd+i",
-		"command": "-inlineChat2.stop",
-		"when": "inlineChatHasEditsAgent && inlineChatVisible && chatEdits.requestCount == '0'"
-	},
-	{
-		"key": "cmd+i",
-		"command": "-inlineChat2.reveal",
-		"when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
 	}
 ]
