@@ -1,7 +1,7 @@
 {
 	// FONT & THEME
 	"editor.fontSize": 14,
-	"terminal.integrated.fontSize": 15,
+	"terminal.integrated.fontSize": 13,
 	"scm.inputFontSize": 14,
 	"window.zoomLevel": 0,
 	"editor.fontFamily": "JetBrainsMono Nerd Font",
@@ -647,6 +647,10 @@
 		".ruff*",
 		"CONVENTIONS.md",
 		"README.md",
+		".env",
+		"__pycache__",
+		".python-version",
+		"uv.lock"
 	],
 
 	// Scroll Faster
