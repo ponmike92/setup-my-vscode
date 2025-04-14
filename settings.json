@@ -67,7 +67,7 @@
 
 		// terminal
 		"terminal.background": "#202020",
-
+		"terminal.foreground": "#000000",
 
 		// diff editor
 		"diffEditor.removedTextBackground": "#ac2e5615",
