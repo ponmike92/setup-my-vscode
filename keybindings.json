@@ -136,11 +136,11 @@
 		"key": "cmd+g a",
 		"command": "git.stageSelectedRanges"
 	},
+	// git - undo/redo
 	{
-		"key": "cmd+g x",
+		"key": "cmd+g shift+z",
 		"command": "git.unstageSelectedRanges"
 	},
-	// git - undo/redo
 	{
 		"key": "cmd+g z",
 		"command": "git.revertSelectedRanges"
