@@ -303,22 +303,18 @@
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
-
-	// prittier
-	"prettier.printWidth": 160,
-	"prettier.semi": false,
-	"prettier.useTabs": true,
-	"prettier.singleQuote": true,
-	"prettier.jsxSingleQuote": true,
-	"prettier.arrowParens": "always",
-
+	
 	// ruff
 	"ruff.lineLength": 120,
+
+	// prettier - path
+	"prettier.prettierPath": "/opt/homebrew/bin/prettier",
+	"prettier.configPath": "/Users/ponomi/.config/prettier/prettierrc.json",
+	"prettier.resolveGlobalModules": true,
 
 	// JSON & YAML
 	"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 	"[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-	// "[yaml]": { "editor.defaultFormatter": "kennylong.kubernetes-yaml-formatter" },
 
 	// JS & TS
 	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -348,32 +344,6 @@
 
 	// Lua
 	"[lua]": { "editor.defaultFormatter": "JohnnyMorganz.stylua" },
-	"Lua.diagnostics.enable": false,
-	"Lua.completion.autoRequire": false,
-	"Lua.completion.enable": false,
-	"Lua.language.completeAnnotation": false,
-	"Lua.addonManager.enable": false,
-	"Lua.completion.showParams": false,
-	"Lua.completion.workspaceWord": false,
-	"Lua.hint.await": false,
-	"Lua.hint.paramType": false,
-	"Lua.hover.enable": false,
-	"Lua.hover.expandAlias": false,
-	"Lua.format.enable": false,
-	"Lua.hover.viewNumber": false,
-	"Lua.hover.viewString": false,
-	"Lua.semantic.annotation": false,
-	"Lua.semantic.enable": false,
-	"Lua.semantic.variable": false,
-	"Lua.signatureHelp.enable": false,
-	"Lua.type.castNumberToInteger": false,
-	"Lua.window.progressBar": false,
-	"Lua.window.statusBar": false,
-	"Lua.language.fixIndent": false,
-	"Lua.completion.keywordSnippet": "Disable",
-	"Lua.completion.showWord": "Disable",
-	"Lua.hint.arrayIndex": "Disable",
-	"Lua.hint.paramName": "Disable",
 
 	// DEBUG
 	"debug.focusWindowOnBreak": false,
