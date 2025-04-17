@@ -745,4 +745,5 @@
 	"quickDim.opacity": 0.12,
 	"applescript.showNotifications": false,
 	"workbench.activityBar.location": "hidden",
+	"explorer.excludeGitIgnore": true,
 }
