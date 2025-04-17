@@ -401,6 +401,11 @@
 		"*.ini": "plaintext"
 	},
 	"files.autoSave": "afterDelay",
+	// "files.autoSave": "onWindowChange",
+	// "window.confirmBeforeClose": "never",
+	// "files.saveBeforeClose": "never",
+	  
+	"window.confirmSaveUntitledWorkspace": false,
 
 	// WORKBENCH
 	// language
@@ -588,14 +593,38 @@
 
 
 	// Colorize (toggle in keybindings!)
-	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
-	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
+	"colorize.include": [
+		"**/*.json",
+		"**/*.conf",
+		"**/*.conf",
+		"**/*.md"
+	],
+	"colorize.languages": [
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"postcss",
+		"sss",
+		"stylus",
+		"xml",
+		"svg",
+		"toml",
+		"json"
+	],
 	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
+	"colorize.colorized_colors": [
+		"BROWSERS_COLORS",
+		"HEXA",
+		"RGB",
+		"HSL",
+		"OKLAB",
+		"OKLCH"
+	],
 
 	// Indent Rainbow
 	"indentRainbow.includedLanguages": ["json"],
-	"indentRainbow.ignoreErrorLanguages": ["json"],
+	// "indentRainbow.ignoreErrorLanguages": ["json"],
 	"indentRainbow.colors": [
 		"rgba(68,68,68,0.00)", 
 		"rgba(68,68,68,0.08)", 
