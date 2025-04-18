@@ -592,10 +592,8 @@
 		"markSection1": false,
 		"markSection2AndTakeDiff": false
 	},
-
-	// markmap
-	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1.5px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 1.5px;\n\tr: 6px;\n\tfill: #242424;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}",
-	"markmap.defaultOptions": "{\n    \"htmlParser\": {\n      \"selector\": \"h1,h2,h3,h4,h5,h6,ul,li\"\n    },\n\"spacingHorizontal\": 60,\n\"spacingVertical\": 3,\n\"duration\": 800,\n\"initialExpandLevel\": 3\n}",
+	"markmap.defaultOptions": "{\n  \"htmlParser\": {\n    \"selector\": \"h1,h2,h3,h4,h5,h6,ul,li\"\n  },\n  \"spacingHorizontal\": 60,\n  \"spacingVertical\": 3,\n  \"duration\": 800,\n  \"initialExpandLevel\": 3,\n  \"extraJs\": [\n    \"data:text/javascript,(function(){const style=document.createElement('style');style.textContent='.markmap-highlight rect{fill:#808080!important;stroke:#606060!important}';document.head.appendChild(style);})()\"\n  ]\n}",
+	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1.5px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 1.5px;\n\tr: 6px;\n\tfill: #242424;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}\n\n.markmap-highlight rect {\n  fill: #303030 !important;\ntransform: scale(0.84, 0.7) !important;\ntransform-origin: center !important;\n  transform-box: fill-box; /* Относительно границ rect */\n  transform-origin: center; /* Работает только с transform-box */\n}",
 
 	// Auto Commit
 	"autoCommit.apiKey": "AIzaSyDvhT49NvzCRhGCrAJkQN5SHb25a4xnFdI",
