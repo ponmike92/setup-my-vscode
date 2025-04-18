@@ -594,8 +594,8 @@
 	},
 
 	// markmap
-	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 0px;\n\tr: 6px;\n\tfill: #262626;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}",
-	
+	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1.5px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 1.5px;\n\tr: 6px;\n\tfill: #242424;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}",
+	"markmap.defaultOptions": "{\n    \"htmlParser\": {\n      \"selector\": \"h1,h2,h3,h4,h5,h6,ul,li\"\n    },\n\"spacingHorizontal\": 60,\n\"spacingVertical\": 3,\n\"duration\": 800,\n\"initialExpandLevel\": 3\n}",
 
 	// Auto Commit
 	"autoCommit.apiKey": "AIzaSyDvhT49NvzCRhGCrAJkQN5SHb25a4xnFdI",
