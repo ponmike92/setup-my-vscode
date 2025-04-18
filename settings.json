@@ -17,7 +17,7 @@
 
 	"workbench.colorTheme": "Moegi Black",
 	"workbench.iconTheme": "vscode-seedling-icon-theme-plus",
-	
+
 	// UPDATES
 	"update.mode": "manual",
 
@@ -35,7 +35,7 @@
 
 		// widgets
 		"quickInput.background": "#181818",
-		
+
 		// activity bar
 		"activityBar.background": "#141414",
 		"activityBar.border": "#00000000",
@@ -54,7 +54,7 @@
 		"statusBar.background": "#202020",
 		"statusBar.foreground": "#484848",
 		"statusBar.border": "#00000000",
-		
+
 		// terminal - panel above
 		"panel.border": "#303030",
 		"panel.background": "#202020",
@@ -163,8 +163,7 @@
 				"settings": {
 					"foreground": "#ffffffdd"
 				}
-			},
-			{
+			}, {
 				"scope": "heading.1.markdown",
 				"settings": {
 					"foreground": "#00fbff",
@@ -184,8 +183,7 @@
 					"foreground": "#36a4d3",
 					"fontStyle": "bold"
 				}
-			},
-			{
+			}, {
 				"scope": "heading.4.markdown",
 				"settings": {
 					"foreground": "#3876ae",
@@ -204,8 +202,7 @@
 				"settings": {
 					"fontStyle": "bold"
 				}
-			},
-			{
+			}, {
 				"scope": "markup.bold.markdown",
 				"settings": {
 					"foreground": "#FC488A",
@@ -225,8 +222,7 @@
 					"foreground": "#049D57",
 					"fontStyle": "bold"
 				}
-			},
-			{
+			}, {
 				"scope": "punctuation.definition.heading.markdown",
 				"settings": {
 					"foreground": "#ffffff55"
@@ -243,11 +239,9 @@
 				"settings": {
 					"foreground": "#666666"
 				}
-			},
-			{
+			}, {
 				"scope": [
-					"string.quoted.single",
-					"string.quoted.double",
+					"string.quoted.single", "string.quoted.double",
 					"string.quoted.multi",
 					"string.quoted.docstring.multi"
 				],
@@ -257,11 +251,9 @@
 			},
 			{
 				"scope": [
-					"string.quoted.single punctuation.definition.string.begin",
-					"string.quoted.single punctuation.definition.string.end",
+					"string.quoted.single punctuation.definition.string.begin", "string.quoted.single punctuation.definition.string.end",
 					"string.quoted.double punctuation.definition.string.begin",
-					"string.quoted.double punctuation.definition.string.end",
-					"string.quoted.multi punctuation.definition.string.begin",
+					"string.quoted.double punctuation.definition.string.end", "string.quoted.multi punctuation.definition.string.begin",
 					"string.quoted.multi punctuation.definition.string.end"
 				],
 				"settings": {
@@ -270,15 +262,13 @@
 			},
 			{
 				"scope": [
-					"punctuation.separator.comma",
-					"punctuation.separator",
+					"punctuation.separator.comma", "punctuation.separator",
 					"punctuation.definition.comment"
 				],
 				"settings": {
 					"foreground": "#555555"
 				}
-			},
-			{
+			}, {
 				"scope": "comment.line",
 				"settings": {
 					"foreground": "#444444",
@@ -294,7 +284,7 @@
 			}
 		]
 	},
-	
+
 	// FORMATTING
 	// editor
 	"editor.formatOnSave": false,
@@ -303,14 +293,24 @@
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
-	
+
 	// ruff
 	"ruff.lineLength": 120,
 
-	// prettier - path
-	"prettier.prettierPath": "/opt/homebrew/bin/prettier",
-	"prettier.configPath": "/Users/ponomi/.config/prettier/prettierrc.json",
-	"prettier.resolveGlobalModules": true,
+	// prettier
+	// файлы внутри проекта?
+	//  ↓ ↓ ↓ ↓ ↓ ↓
+	"prettier.configPath": "/Users/ponomi/.config/prettier/.prettierrc",
+	// файлы вне проекта или Untitled? (лучше чем ничего)
+	// ↓ ↓ ↓ ↓ ↓ ↓
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.semi": false,
+	"prettier.arrowParens": "always",
+	"prettier.printWidth": 160,
+
+	// ФАЙ
 
 	// JSON & YAML
 	"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -344,6 +344,34 @@
 
 	// Lua
 	"[lua]": { "editor.defaultFormatter": "JohnnyMorganz.stylua" },
+
+	// lua -config
+	"Lua.diagnostics.enable": false,
+	"Lua.completion.autoRequire": false,
+	"Lua.completion.enable": false,
+	"Lua.language.completeAnnotation": false,
+	"Lua.addonManager.enable": false,
+	"Lua.completion.showParams": false,
+	"Lua.completion.workspaceWord": false,
+	"Lua.hint.await": false,
+	"Lua.hint.paramType": false,
+	"Lua.hover.enable": false,
+	"Lua.hover.expandAlias": false,
+	"Lua.format.enable": false,
+	"Lua.hover.viewNumber": false,
+	"Lua.hover.viewString": false,
+	"Lua.semantic.annotation": false,
+	"Lua.semantic.enable": false,
+	"Lua.semantic.variable": false,
+	"Lua.signatureHelp.enable": false,
+	"Lua.type.castNumberToInteger": false,
+	"Lua.window.progressBar": false,
+	"Lua.window.statusBar": false,
+	"Lua.language.fixIndent": false,
+	"Lua.completion.keywordSnippet": "Disable",
+	"Lua.completion.showWord": "Disable",
+	"Lua.hint.arrayIndex": "Disable",
+	"Lua.hint.paramName": "Disable",
 
 	// DEBUG
 	"debug.focusWindowOnBreak": false,
@@ -404,14 +432,14 @@
 	// "files.autoSave": "onWindowChange",
 	// "window.confirmBeforeClose": "never",
 	// "files.saveBeforeClose": "never",
-	  
+
 	"window.confirmSaveUntitledWorkspace": false,
 
 	// WORKBENCH
 	// language
 	"workbench.editor.languageDetection": true,
 	"workbench.editor.preferHistoryBasedLanguageDetection": true,
-	"workbench.editor.historyBasedLanguageDetection": true, 
+	"workbench.editor.historyBasedLanguageDetection": true,
 
 	// ui
 	"workbench.sideBar.location": "right",
@@ -513,7 +541,7 @@
 
 	// search
 	"editor.find.autoFindInSelection": "multiline",
-	
+
 	// etc
 	"editor.codeActionsOnSave": {},
 	"editor.lineHeight": 0,
@@ -565,6 +593,10 @@
 		"markSection2AndTakeDiff": false
 	},
 
+	// markmap
+	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 0px;\n\tr: 6px;\n\tfill: #262626;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}",
+	
+
 	// Auto Commit
 	"autoCommit.apiKey": "AIzaSyDvhT49NvzCRhGCrAJkQN5SHb25a4xnFdI",
 	"autoCommit.autoConfirmCommit": true,
@@ -590,7 +622,6 @@
 	// 	{ "emoji": "📝", "colon": ":memo:"                  , "text": "doc                                                    " },
 	// 	{ "emoji": "📦️", "colon": ":package:"               , "text": "configure                                            " }
 	// ],
-
 
 	// Colorize (toggle in keybindings!)
 	"colorize.include": [
@@ -623,13 +654,15 @@
 	],
 
 	// Indent Rainbow
-	"indentRainbow.includedLanguages": ["json"],
+	"indentRainbow.includedLanguages": [
+		"json"
+	],
 	// "indentRainbow.ignoreErrorLanguages": ["json"],
 	"indentRainbow.colors": [
-		"rgba(68,68,68,0.00)", 
-		"rgba(68,68,68,0.08)", 
-		"rgba(68,68,68,0.00)", 
-		"rgba(68,68,68,0.08)"],
+		"rgba(68,68,68,0.00)", "rgba(68,68,68,0.08)",
+		"rgba(68,68,68,0.00)",
+		"rgba(68,68,68,0.08)"
+	],
 
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
@@ -638,17 +671,13 @@
 
 	// File Tree Extractor
 	"fileTreeExtractor.ignoredItems": [
-		".DS_Store",
-		".git",
+		".DS_Store", ".git",
 		".gitignore",
-		".venv",
-		".aider.*",
+		".venv", ".aider.*",
 		".ruff*",
-		"CONVENTIONS.md",
-		"README.md",
+		"CONVENTIONS.md", "README.md",
 		".env",
-		"__pycache__",
-		".python-version",
+		"__pycache__", ".python-version",
 		"uv.lock"
 	],
 
@@ -709,7 +738,11 @@
 	},
 
 	// Indented Block Higlighting #F55A8C
-	"blockhighlight.background": ["200", "100", "255", ".04"],
+	"blockhighlight.background": [
+		"200", "100",
+		"255",
+		".04"
+	],
 	"blockhighlight.accentCurrentLine": false,
 	"blockhighlight.isWholeLine": true,
 
@@ -719,25 +752,28 @@
 		{
 			"regex": "^\\d{2}:\\d{2}(?::\\d{2})?",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#666666", "fontWeight": "bold" }]
-		},
-		// code language .md
+			"editor": [
+				{ "color": "#666666", "fontWeight": "bold" }]
+		}, // code language .md
 		{
 			"regex": "(?<=```)[a-zA-Z0-9+_-]+",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#333333", "fontWeight": "bold" }]
+			"editor": [
+				{ "color": "#333333", "fontWeight": "bold" }]
 		},
 		// aider
 		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#aaaaaa" }]
+			"editor": [
+				{ "color": "#aaaaaa" }]
 		},
 		// aider
 		{
 			"regex": ".*AI!.*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#F55A8C", "fontWeight": "bold" }]
+			"editor": [
+				{ "color": "#F55A8C", "fontWeight": "bold" }]
 		}
 	],
 
@@ -745,5 +781,5 @@
 	"quickDim.opacity": 0.12,
 	"applescript.showNotifications": false,
 	"workbench.activityBar.location": "hidden",
-	"explorer.excludeGitIgnore": true,
+	"workbench.statusBar.visible": false,
 }
