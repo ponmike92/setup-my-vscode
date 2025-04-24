@@ -393,7 +393,9 @@
 	{ "key": "alt+cmd+r"            , "command": "references-view.clear" },
 	{ "key": "shift+cmd+m"          , "command": "markmap-vscode.open" },
 
-	// OFF
+	// OFF THIS SHIT!
+	// OFF THIS SHIT!
+	// OFF THIS SHIT!
 	{ "key": "shift+cmd+e"          , "command": "-workbench.view.explorer" },
 	{ "key": "shift+enter"          , "command": "-jupyter.execSelectionInteractive" },
 	{ "key": "cmd+b"                , "command": "-workbench.action.toggleSidebarVisibility" },
