@@ -1,14 +1,47 @@
 [
-	// CMD
-	{ "key": "cmd+up", "command": "betterPageUp", "when": "textInputFocus" },
-	{ "key": "cmd+down", "command": "betterPageDown" },
-	{ "key": "cmd+p", "command": "workbench.action.showCommands" },
-	{ "key": "cmd+o", "command": "workbench.action.quickOpen" },
-	{ "key": "cmd+o", "command": "workbench.action.quickOpenNavigateNextInFilePicker"
-					, "when": "inFilesPicker && inQuickOpen" },
+	// ~ - - - - - - - - - - - - --
+	// -- - - E - - - - I O P - - -
+	// --- - S D - - - J - L - ' --
+	// ---- - - - - B - M , . - ---
+	//  - - - ⌘ --------- - -   ---
+	{ "key": "cmd+e"       , "command": "editor.action.marker.next" },
+	{ "key": "cmd+i"       , "command": "python.execInREPL"
+						   , "when": "editorLangId == 'python'"},
+	{ "key": "cmd+o"       , "command": "workbench.action.quickOpen" },
+	{ "key": "cmd+o"       , "command": "workbench.action.quickOpenNavigateNextInFilePicker"
+						   , "when"   : "inFilesPicker && inQuickOpen" },
+	{ "key": "cmd+p"       , "command": "workbench.action.showCommands" },
 
-	// PANELS
-	{ "key": "cmd+s"          , "command": "workbench.action.toggleSidebarVisibility" },
+	{ "key": "cmd+s"       , "command": "workbench.action.toggleSidebarVisibility" },
+	{ "key": "cmd+d"       , "command": "quickDim.dim" },
+	{ "key": "cmd+j"       , "command": "toggleSuggestionDetails"
+						   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
+	{ "key": "cmd+j"       , "command": "editor.action.triggerSuggest"
+						   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
+	{ "key": "cmd+l"       , "command": "workbench.action.editor.nextChange"
+						   , "when"   : "editorTextFocus && !textCompareEditorActive" },
+	{ "key": "cmd+'"       , "command": "workbench.action.openGlobalKeybindingsFile" },
+	{ "key": "cmd+[Quote]" , "command": "workbench.action.openGlobalKeybindingsFile" },
+
+	{ "key": "cmd+b"       , "command": "bookmarks.jumpToNext" },
+	{ "key": "cmd+m"       , "command": "workbench.action.gotoSymbol" },
+	{ "key": "cmd+,"       , "command": "workbench.action.openSettingsJson" },
+	{ "key": "cmd+[Comma]" , "command": "workbench.action.openSettingsJson" },
+	{ "key": "cmd+."       , "command": "editor.action.quickFix"
+						   , "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
+
+	{ "key": "cmd+up"      , "command": "betterPageUp" },
+	{ "key": "cmd+down"    , "command": "betterPageDown" },
+
+	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "terminalProcessSupported"
+	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "activeEditor == 'workbench.editor.repl'"
+	
+
+	// ~ - - - - - - - - - - - - --
+	// -- - - E - - - - - O - - - -
+	// --- - - - - - - - - - - - --
+	// ⇧⇧⇧⇧ - - - - - - - - - - ---
+	//  - - - ⌘ --------- - -   ---
 	{ "key": "shift+cmd+k"    , "command": "workbench.action.toggleStatusbarVisibility" },
 	{ "key": "shift+alt+cmd+k", "command": "workbench.action.toggleActivityBarVisibility" },
 	{ "key": "alt+cmd+p"      , "command": "workbench.view.extension.project-manager" },
@@ -58,9 +91,15 @@
 
 	{ "key": "shift+cmd+b"    , "command": "bookmarksExplorer.focus"
 							  , "when": "editorFocus || filesExplorerFocus" },
-	{ "key": "cmd+b"          , "command": "bookmarks.jumpToNext" },
 	{ "key": "alt+cmd+b"      , "command": "bookmarks.toggle"
 							  , "when": "editorTextFocus" },
+
+	// ~ - - - - - - - - - - - - --
+	// -- - - - - - - - - - - - - -
+	// --- - - - - - - - - - - - --
+	// ---- - - - - - - - - - - ---
+	//  - - ⌥ ⌘ --------- - -   ---
+
 
 	// select by regex
 	{ "key": "alt+cmd+a", "command": "selectby.regex", "args": ["SelectCodeBlock"], "when": "editorTextFocus" },
@@ -93,10 +132,7 @@
 	},
 	{ "key": "ctrl+shift+alt+cmd+v", "when": "openEditorsFocus", "command": "workbench.action.focusActiveEditorGroup" },
 
-	// REPL Python
-	{ "key": "cmd+i", "command": "python.execInREPL", "when": "editorLangId == 'python'"},
-	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "terminalProcessSupported"
-	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "activeEditor == 'workbench.editor.repl'"
+
 
 	// GIT
 	{ "key": "shift+cmd+g"  , "command": "workbench.view.scm" },
@@ -152,7 +188,6 @@
 	{ "key": "ctrl+alt+up", "command": "editor.gotoPreviousFold" },
 	{ "key": "alt+cmd+x", "command": "workbench.action.editor.changeLanguageMode" },
 	{ "key": "alt+cmd+f", "command": "editor.action.formatSelection" },
-	{ "key": "cmd+r", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly" },
 
 	// {
 	// 	"key": "cmd+up",
@@ -170,7 +205,6 @@
 	// 	"command": "editor.action.marker.next"
 	// },
 	{ "key": "escape", "command": "closeMarkersNavigation", "when": "markersNavigationVisible" },
-	{ "key": "cmd+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
 	{ "key": "cmd+[Period]", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
 
 
@@ -220,8 +254,7 @@
 	{ "key": "shift+cmd+d", "command": "extension.partialDiff.diffSelectionWithClipboard" },
 	{ "key": "alt+cmd+up", "when": "textCompareEditorVisible", "command": "workbench.action.compareEditor.previousChange" },
 	{ "key": "alt+cmd+down", "when": "textCompareEditorVisible", "command": "workbench.action.compareEditor.nextChange" },
-	// changes
-	{ "key": "cmd+l", "command": "workbench.action.editor.nextChange", "when": "editorTextFocus && !textCompareEditorActive" },
+
 	// references
 	{ "key": "shift+alt+r", "command": "references-view.prev", "when": "reference-list.hasResult && references-view.canNavigate" },
 	{ "key": "shift+cmd+r", "command": "references-view.findReferences", "when": "editorHasReferenceProvider" },
@@ -296,8 +329,7 @@
 
 	{ "key": "alt+cmd+s", "command": "workbench.action.files.save" },
 	{ "key": "shift+cmd+j", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
-	{ "key": "cmd+j", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
-	{ "key": "cmd+j", "command": "toggleSuggestionDetails", "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
+
 
 	{ "key": "alt+cmd+o", "command": "workbench.action.files.openFolderViaWorkspace", "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'" },
 	{ "key": "alt+cmd+o", "command": "workbench.action.files.openFileFolder", "when": "openFolderWorkspaceSupport" },
@@ -342,12 +374,9 @@
 		"args": { "sequence": ["workbench.action.focusActiveEditorGroup", "workbench.action.increaseViewSize"] }
 	},
 
-	{ "key": "cmd+m"                , "command": "workbench.action.gotoSymbol" },
 	{ "key": "alt+cmd+w"            , "command": "workbench.action.closeOtherEditors" },
 	{ "key": "alt+cmd+i"            , "command": "workbench.action.toggleDevTools" },
-	{ "key": "cmd+'"                , "command": "workbench.action.openGlobalKeybindingsFile" },
 	{ "key": "shift+cmd+'"          , "command": "workbench.action.openGlobalKeybindings" },
-	{ "key": "cmd+,"                , "command": "workbench.action.openSettingsJson" },
 	{ "key": "alt+cmd+n"            , "command": "workbench.action.files.newUntitledFile" },
 	{ "key": "alt+cmd+a"            , "command": "align.by.regex", "when": "editorHasSelection" },
 	{ "key": "shift+cmd+[Backquote]", "command": "workbench.action.terminal.toggleTerminal" },
@@ -356,14 +385,10 @@
 	{ "key": "ctrl+alt+-"           , "command": "dakara-foldplus.cursor.exclude" },
 	{ "key": "alt+a"                , "command": "editor.action.selectToBracket" },
 	{ "key": "ctrl+alt+down"        , "command": "editor.gotoNextFold" },
-	{ "key": "cmd+[Quote]"          , "command": "workbench.action.openGlobalKeybindingsFile" },
-	{ "key": "cmd+[Comma]"          , "command": "workbench.action.openSettingsJson" },
 	{ "key": "shift+cmd+[Quote]"    , "command": "workbench.action.openGlobalKeybindings" },
 	{ "key": "shift+cmd+[Comma]"    , "command": "workbench.action.openSettings" },
 	{ "key": "shift+cmd+p"          , "command": "projectManager.listFavoriteProjects#sideBarFavorites" },
 	{ "key": "shift+cmd+w"          , "command": "markwhen.openPreview" },
-	{ "key": "cmd+e"                , "command": "editor.action.marker.next" },
-	{ "key": "cmd+d"                , "command": "quickDim.dim" },
 	{ "key": "alt+cmd+h"            , "command": "cloak.hideSecrets" },
 	{ "key": "alt+cmd+r"            , "command": "references-view.clear" },
 	{ "key": "shift+cmd+m"          , "command": "markmap-vscode.open" },
