@@ -102,6 +102,10 @@
 
 	{ "key": "shift+cmd+b"    , "command": "bookmarksExplorer.focus"
 							  , "when": "editorFocus || filesExplorerFocus" },
+
+	{ "key": "shift+cmd+r"    , "command": "references-view.findReferences"
+							  , "when": "editorHasReferenceProvider" },
+
 	{ "key": "alt+cmd+b"      , "command": "bookmarks.toggle"
 							  , "when": "editorTextFocus" },
 
@@ -113,9 +117,17 @@
 
 
 	// select by regex
-	{ "key": "alt+cmd+a", "command": "selectby.regex", "args": ["SelectCodeBlock"], "when": "editorTextFocus" },
-	{ "key": "ctrl+cmd+a", "command": "selectby.regex", "args": ["SelectParagraph"], "when": "editorTextFocus" },
-	{ "key": "shift+cmd+a", "command": "selectby.regex", "args": ["SelectBetweenHeadings"], "when": "editorTextFocus" },
+	{ "key": "alt+cmd+a", "command": "selectby.regex"
+						, "args": ["SelectCodeBlock"]
+						, "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$/" },
+
+	{ "key": "ctrl+cmd+a", "command": "selectby.regex"
+						, "args": ["SelectParagraph"]
+						, "when": "editorTextFocus" },
+
+	{ "key": "shift+cmd+a", "command": "selectby.regex"
+						, "args": ["SelectBetweenHeadings"]
+						, "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$/" },
 
 	// FOLDING
 	{ "key": "cmd+[BracketLeft]", "command": "editor.fold" },
@@ -160,11 +172,10 @@
 	{ "key": "cmd+g shift+z", "command": "git.unstageSelectedRanges" },
 	{ "key": "cmd+g z"      , "command": "git.revertSelectedRanges" },
 	{ "key": "cmd+g e"      , "command": "git.commitAmend" },
-	{ "key": "cmd+g u"      , "command": "workbench.action.terminal.sendSequence", "args": { "text": "git reset --soft HEAD~1\n" } },
+	{ "key": "cmd+g u"      , "command": "workbench.action.terminal.sendSequence"
+							, "args": { "text": "git reset --soft HEAD~1\n" } },
 
-	// editor
-	{ "key": "ctrl+shift+right", "command": "workbench.action.moveEditorToRightGroup" },
-	{ "key": "ctrl+shift+left", "command": "workbench.action.moveEditorToLeftGroup" },
+
 	
 	// colors
 	{
@@ -192,32 +203,22 @@
 		"when": "editorTextFocus",
 		"args": { "id": "line_numbers", "value": [{ "editor.lineNumbers": "on" }, { "editor.lineNumbers": "off" }] }
 	},
+	
+	// ARROWS
+	{ "key": "ctrl+alt+up", "command": "editor.gotoPreviousFold" },
+	{ "key": "ctrl+shift+right", "command": "workbench.action.moveEditorToRightGroup" },
+	{ "key": "ctrl+shift+left", "command": "workbench.action.moveEditorToLeftGroup" },
+
+	// ESCAPE
+	{ "key": "escape", "command": "closeMarkersNavigation", "when": "markersNavigationVisible" },
 
 	// other settings
 	{ "key": "cmd+\\", "command": "editor.action.jumpToBracket", "when": "editorTextFocus" },
 	{ "key": "cmd+[Semicolon]", "command": "workbench.action.toggleAuxiliaryBar" },
-	{ "key": "ctrl+alt+up", "command": "editor.gotoPreviousFold" },
 	{ "key": "alt+cmd+x", "command": "workbench.action.editor.changeLanguageMode" },
 	{ "key": "alt+cmd+f", "command": "editor.action.formatSelection" },
 
-	// {
-	// 	"key": "cmd+up",
-	// 	"command": "editor.action.moveLinesUpAction",
-	// 	"when": "editorTextFocus && !editorReadonly"
-	// },
-	// {
-	// 	"key": "cmd+down",
-	// 	"command": "editor.action.moveLinesDownAction",
-	// 	"when": "editorTextFocus && !editorReadonly"
-	// },
-	// warnings and errors
-	// {
-	// 	"key": "cmd+e",
-	// 	"command": "editor.action.marker.next"
-	// },
-	{ "key": "escape", "command": "closeMarkersNavigation", "when": "markersNavigationVisible" },
 	{ "key": "cmd+[Period]", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
-
 
 	// elements
 	// bookmarks
@@ -233,31 +234,14 @@
 	{
 		"key": "alt+cmd+up",
 		"when": "editorTextFocus",
-		"command": "extension.multiCommand.execute",
-		"args": {
-			// "sequence": ["bookmarks.jumpToPrevious", "scroll-faster.down"]
-			"sequence": ["bookmarks.jumpToPrevious"]
-		}
+		"command": "bookmarks.jumpToPrevious"
 	},
 	{
 		"key": "alt+cmd+down",
 		"when": "editorTextFocus",
-		"command": "extension.multiCommand.execute",
-		"args": {
-			// "sequence": ["bookmarks.jumpToNext", "scroll-faster.down"]
-			"sequence": ["bookmarks.jumpToNext"]
-		}
+		"command": "bookmarks.jumpToNext"
 	},
-	// {
-	// 	"key": "ctrl+cmd+down",
-	// 	"command": "scroll-faster.down",
-	// 	"when": "textInputFocus"
-	// },
-	// {
-	// 	"key": "ctrl+cmd+up",
-	// 	"command": "scroll-faster.up",
-	// 	"when": "textInputFocus"
-	// },
+
 	{ "key": "cmd+enter", "command": "editor.action.selectAllMatches", "when": "editorFocus && findWidgetVisible" },
 	{ "key": "alt+enter", "command": "editor.action.replaceAll", "when": "editorFocus && findWidgetVisible && replaceInputFocussed" },
 
@@ -268,7 +252,6 @@
 
 	// references
 	{ "key": "shift+alt+r", "command": "references-view.prev", "when": "reference-list.hasResult && references-view.canNavigate" },
-	{ "key": "shift+cmd+r", "command": "references-view.findReferences", "when": "editorHasReferenceProvider" },
 	{ "key": "alt+cmd+down", "command": "references-view.next", "when": "reference-list.hasResult && references-view.canNavigate && view.references-view.tree.visible" },
 	{ "key": "alt+cmd+up", "command": "references-view.prev", "when": "reference-list.hasResult && references-view.canNavigate && view.references-view.tree.visible" },
 	// find
