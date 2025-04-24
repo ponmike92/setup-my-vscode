@@ -163,7 +163,20 @@
 				"settings": {
 					"foreground": "#ffffffdd"
 				}
-			}, {
+			},
+			{
+				"scope": "markup.underline.link.markdown",
+				"settings": {
+					"foreground": "#505050"
+				}
+			},
+			{
+				"scope": "markup.inline.raw",
+				"settings": {
+					"foreground": "#999999"
+				}
+			},
+			{
 				"scope": "heading.1.markdown",
 				"settings": {
 					"foreground": "#00fbff",
@@ -333,7 +346,9 @@
 	"python.analysis.autoIndent": false,
 
 	// markdown
+	// "tidyMarkdown.disableFormatter": false,
 	"[markdown]": {
+		// "editor.defaultFormatter": "tehnix.vscode-tidymarkdown",
 		"editor.detectIndentation": true,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2
@@ -464,9 +479,6 @@
 	"workbench.editor.pinnedTabSizing": "shrink",
 	"workbench.editor.labelFormat": "short",
 	"workbench.quickOpen.closeOnFocusLost": false,
-
-	// EXPLORER
-	// sorting
 	"explorer.openEditors.sortOrder": "editorOrder",
 	"explorer.sortOrder": "default",
 
@@ -518,7 +530,7 @@
 	// word wraps
 	"editor.wordWrap": "wordWrapColumn",
 	"editor.wrappingIndent": "same",
-	"editor.wordWrapColumn": 120,
+	"editor.wordWrapColumn": 90,
 
 	// cursor & sticky scroll
 	"editor.cursorSurroundingLines": 5,
@@ -592,8 +604,22 @@
 		"markSection1": false,
 		"markSection2AndTakeDiff": false
 	},
-	"markmap.defaultOptions": "{\n  \"htmlParser\": {\n    \"selector\": \"h1,h2,h3,h4,h5,h6,ul,li\"\n  },\n  \"spacingHorizontal\": 60,\n  \"spacingVertical\": 3,\n  \"duration\": 800,\n  \"initialExpandLevel\": 3,\n  \"extraJs\": [\n    \"data:text/javascript,(function(){const style=document.createElement('style');style.textContent='.markmap-highlight rect{fill:#808080!important;stroke:#606060!important}';document.head.appendChild(style);})()\"\n  ]\n}",
-	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1.5px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 1.5px;\n\tr: 6px;\n\tfill: #242424;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}\n\n.markmap-highlight rect {\n  fill: #303030 !important;\ntransform: scale(0.84, 0.7) !important;\ntransform-origin: center !important;\n  transform-box: fill-box; /* Относительно границ rect */\n  transform-origin: center; /* Работает только с transform-box */\n}",
+	
+	// Code Runner	
+	"code-runner.executorMap": {
+		"python": "python3",
+	},
+	"code-runner.defaultLanguage": "python",
+	"code-runner.runInTerminal": true,
+	"code-runner.clearPreviousOutput": true,
+	"code-runner.showExecutionMessage": false,	
+	"code-runner.enableAppInsights": false,
+	"code-runner.showRunCommandInExplorerContextMenu": false,
+	"code-runner.showRunCommandInEditorContextMenu": false,
+
+	// Markmap
+	"markmap.defaultOptions": "{\n  \"htmlParser\": {\n    \"selector\": \"h1,h2,h3,h4,h5,h6,ul,li\"\n  },\n  \"spacingHorizontal\": 60,\n  \"spacingVertical\": 3,\n  \"duration\": 800,\n  \"initialExpandLevel\": 2\n}",
+	"markmap.customCSS": ".markmap-link,\nline {\n\tstroke: #505050;\n\tstroke-width: 1.5px;\n}\n.markmap-node > circle {\n\tstroke: #202020;\n\tstroke-width: 1.5px;\n\tr: 6px;\n\tfill: #242424;\n}\n\n.markmap-foreign a {\n\ttext-decoration: none;\n\tcolor: #bbbbbb !important;\n}\n\n.markmap-highlight rect {\n\t/* fill: #303030 !important; */\n\tfill: transparent !important;\n\ttransform: scale(0.84, 0.7) !important;\n\ttransform-origin: center !important;\n\ttransform-box: fill-box;\n\ttransform-origin: center;\n}",
 
 	// Auto Commit
 	"autoCommit.apiKey": "AIzaSyDvhT49NvzCRhGCrAJkQN5SHb25a4xnFdI",
@@ -667,18 +693,6 @@
 	"bookmarks.gutterIconFillColor": "crimson",
 	"bookmarks.gutterIconBorderColor": "rgb(99, 40, 64)",
 
-	// File Tree Extractor
-	"fileTreeExtractor.ignoredItems": [
-		".DS_Store", ".git",
-		".gitignore",
-		".venv", ".aider.*",
-		".ruff*",
-		"CONVENTIONS.md", "README.md",
-		".env",
-		"__pycache__", ".python-version",
-		"uv.lock"
-	],
-
 	// Scroll Faster
 	"scrollFaster.scrollByLines": 8,
 
@@ -719,10 +733,17 @@
 
 	// Select by
 	"selectby.regexes": {
+		"SelectCodeBlock": {
+			"flags": "m",
+			"backward": "(^```[a-zA-Z]*\\s*$|`{1,3})",
+			"forward": "(^```\\s*$|`{1,3})",
+			"backwardInclude": false,
+			"forwardInclude": false
+		},
 		"SelectParagraph": {
 			"flags": "m",
-			"backward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
-			"forward": "(\\r?\\n[ \\t]*\\r?\\n|^#+[ \\t].*\\r?\\n)",
+			"backward": "(^|\\r?\\n)[ \\t]*\\r?\\n",
+			"forward": "\\r?\\n[ \\t]*(\\r?\\n|$)",
 			"backwardInclude": false,
 			"forwardInclude": false
 		},

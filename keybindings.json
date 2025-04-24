@@ -272,7 +272,7 @@
 	},
 	// colors
 	{
-		"key": "cmd+k",
+		"key": "alt+cmd+k",
 		"when": "editorTextFocus",
 		"command": "toggle",
 		"args": {
@@ -375,6 +375,12 @@
 		"when": "editorTextFocus && !editorReadonly"
 	},
 	// select by regex
+	{
+		"key": "alt+cmd+a",
+		"command": "selectby.regex",
+		"args": ["SelectCodeBlock"],
+		"when": "editorTextFocus"
+	},
 	{
 		"key": "ctrl+cmd+a",
 		"command": "selectby.regex",
