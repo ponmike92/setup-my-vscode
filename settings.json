@@ -196,7 +196,8 @@
 					"foreground": "#36a4d3",
 					"fontStyle": "bold"
 				}
-			}, {
+			},
+			{
 				"scope": "heading.4.markdown",
 				"settings": {
 					"foreground": "#3876ae",
@@ -215,7 +216,8 @@
 				"settings": {
 					"fontStyle": "bold"
 				}
-			}, {
+			},
+			{
 				"scope": "markup.bold.markdown",
 				"settings": {
 					"foreground": "#FC488A",
@@ -235,7 +237,8 @@
 					"foreground": "#049D57",
 					"fontStyle": "bold"
 				}
-			}, {
+			},
+			{
 				"scope": "punctuation.definition.heading.markdown",
 				"settings": {
 					"foreground": "#ffffff55"
@@ -252,21 +255,20 @@
 				"settings": {
 					"foreground": "#666666"
 				}
-			}, {
-				"scope": [
-					"string.quoted.single", "string.quoted.double",
-					"string.quoted.multi",
-					"string.quoted.docstring.multi"
-				],
+			},
+			{
+				"scope": ["string.quoted.single", "string.quoted.double", "string.quoted.multi", "string.quoted.docstring.multi"],
 				"settings": {
 					"foreground": "#6a6e6c"
 				}
 			},
 			{
 				"scope": [
-					"string.quoted.single punctuation.definition.string.begin", "string.quoted.single punctuation.definition.string.end",
+					"string.quoted.single punctuation.definition.string.begin",
+					"string.quoted.single punctuation.definition.string.end",
 					"string.quoted.double punctuation.definition.string.begin",
-					"string.quoted.double punctuation.definition.string.end", "string.quoted.multi punctuation.definition.string.begin",
+					"string.quoted.double punctuation.definition.string.end",
+					"string.quoted.multi punctuation.definition.string.begin",
 					"string.quoted.multi punctuation.definition.string.end"
 				],
 				"settings": {
@@ -274,14 +276,12 @@
 				}
 			},
 			{
-				"scope": [
-					"punctuation.separator.comma", "punctuation.separator",
-					"punctuation.definition.comment"
-				],
+				"scope": ["punctuation.separator.comma", "punctuation.separator", "punctuation.definition.comment"],
 				"settings": {
 					"foreground": "#555555"
 				}
-			}, {
+			},
+			{
 				"scope": "comment.line",
 				"settings": {
 					"foreground": "#444444",
@@ -297,6 +297,9 @@
 			}
 		]
 	},
+
+	// TERMINAL
+	"python.terminal.launchArgs": ["-m", "IPython", "--no-autoindent"],
 
 	// FORMATTING
 	// editor
@@ -316,18 +319,21 @@
 	"prettier.configPath": "/Users/ponomi/.config/prettier/.prettierrc",
 	// файлы вне проекта или Untitled? (лучше чем ничего)
 	// ↓ ↓ ↓ ↓ ↓ ↓
+	"prettier.printWidth": 160,
 	"prettier.useTabs": true,
 	"prettier.singleQuote": true,
 	"prettier.jsxSingleQuote": true,
 	"prettier.semi": false,
 	"prettier.arrowParens": "always",
-	"prettier.printWidth": 160,
 
 	// ФАЙ
 
-	// JSON & YAML
+	// JSON
 	"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 	"[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+	// YAML
+	// "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
 	// JS & TS
 	"[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -480,7 +486,7 @@
 	"workbench.editor.labelFormat": "short",
 	"workbench.quickOpen.closeOnFocusLost": false,
 	"explorer.openEditors.sortOrder": "editorOrder",
-	"explorer.sortOrder": "default",
+	"explorer.sortOrder": "modified",
 
 	// nesting
 	"explorer.fileNesting.patterns": {
@@ -513,14 +519,39 @@
 	// autocomplete & suggestions
 	"editor.inlineSuggest.showToolbar": "never",
 	"editor.snippetSuggestions": "none",
-	"editor.suggest.showWords": false,
-	"editor.suggestOnTriggerCharacters": false,
+	"editor.suggest.showDeprecated": false,
+	"editor.suggest.showEvents"    : false,
+	"editor.suggest.showIssues"    : false,
+	
+	// "editor.suggest.showClasses"       : true,
+	// "editor.suggest.showEnumMembers"   : false,
+	// "editor.suggest.showFields"        : false,
+	// "editor.suggest.showFiles"         : false,
+	// "editor.suggest.showFolders"       : false,
+	// "editor.suggest.showFunctions"     : true,
+	// "editor.suggest.showInterfaces"    : false,
+	// "editor.suggest.showIssues"        : false,
+	// "editor.suggest.showKeywords"      : true,
+	// "editor.suggest.showMethods"       : true,
+	// "editor.suggest.showModules"       : true,
+	// "editor.suggest.showOperators"     : false,
+	// "editor.suggest.showProperties"    : true,
+	// "editor.suggest.showReferences"    : false,
+	// "editor.suggest.showSnippets"      : false,
+	// "editor.suggest.showStructs"       : false,
+	// "editor.suggest.showTypeParameters": false,
+	// "editor.suggest.showUnits"         : false,
+	// "editor.suggest.showUsers"         : false,
+	// "editor.suggest.showValues"        : false,
+	// "editor.suggest.showVariables"     : true,
+	// "editor.suggest.showWords"         : false,
+	// "editor.suggestOnTriggerCharacters": false,
 	"editor.suggestSelection": "first",
 	"editor.quickSuggestionsDelay": 0,
 	"editor.quickSuggestions": {
-		"other": "on",
-		"comments": "on",
-		"strings": "on"
+		"comments": "off",
+		"strings": "off",
+		"other": "on"
 	},
 	"editor.inlineSuggest.suppressSuggestions": false,
 	"editor.screenReaderAnnounceInlineSuggestion": false,
@@ -530,7 +561,7 @@
 	// word wraps
 	"editor.wordWrap": "wordWrapColumn",
 	"editor.wrappingIndent": "same",
-	"editor.wordWrapColumn": 90,
+	"editor.wordWrapColumn": 120,
 
 	// cursor & sticky scroll
 	"editor.cursorSurroundingLines": 5,
@@ -544,7 +575,7 @@
 	"editor.foldingStrategy": "auto",
 
 	// numbering
-	"editor.lineNumbers": "off",
+	"editor.lineNumbers": "on",
 	"editor.glyphMargin": true,
 	"editor.lightbulb.enabled": "off",
 
@@ -604,15 +635,31 @@
 		"markSection1": false,
 		"markSection2AndTakeDiff": false
 	},
-	
-	// Code Runner	
+
+	// File Tree Extractor
+	"fileTreeExtractor.ignoredItems": [
+		".DS_Store",
+		".git",
+		".gitignore",
+		".venv",
+		".aider.*",
+		".ruff*",
+		"CONVENTIONS.md",
+		"README.md",
+		".env",
+		"__pycache__",
+		".python-version",
+		"uv.lock"
+	],
+
+	// Code Runner
 	"code-runner.executorMap": {
-		"python": "python3",
+		"python": "python3"
 	},
 	"code-runner.defaultLanguage": "python",
 	"code-runner.runInTerminal": true,
 	"code-runner.clearPreviousOutput": true,
-	"code-runner.showExecutionMessage": false,	
+	"code-runner.showExecutionMessage": false,
 	"code-runner.enableAppInsights": false,
 	"code-runner.showRunCommandInExplorerContextMenu": false,
 	"code-runner.showRunCommandInEditorContextMenu": false,
@@ -648,45 +695,15 @@
 	// ],
 
 	// Colorize (toggle in keybindings!)
-	"colorize.include": [
-		"**/*.json",
-		"**/*.conf",
-		"**/*.conf",
-		"**/*.md"
-	],
-	"colorize.languages": [
-		"css",
-		"sass",
-		"scss",
-		"less",
-		"postcss",
-		"sss",
-		"stylus",
-		"xml",
-		"svg",
-		"toml",
-		"json"
-	],
+	"colorize.include": ["**/*.json", "**/*.conf", "**/*.conf", "**/*.md"],
+	"colorize.languages": ["css", "sass", "scss", "less", "postcss", "sss", "stylus", "xml", "svg", "toml", "json"],
 	"colorize.enable_search_variables": true,
-	"colorize.colorized_colors": [
-		"BROWSERS_COLORS",
-		"HEXA",
-		"RGB",
-		"HSL",
-		"OKLAB",
-		"OKLCH"
-	],
+	"colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
 
 	// Indent Rainbow
-	"indentRainbow.includedLanguages": [
-		"json"
-	],
+	"indentRainbow.includedLanguages": ["json"],
 	// "indentRainbow.ignoreErrorLanguages": ["json"],
-	"indentRainbow.colors": [
-		"rgba(68,68,68,0.00)", "rgba(68,68,68,0.08)",
-		"rgba(68,68,68,0.00)",
-		"rgba(68,68,68,0.08)"
-	],
+	"indentRainbow.colors": ["rgba(68,68,68,0.00)", "rgba(68,68,68,0.08)", "rgba(68,68,68,0.00)", "rgba(68,68,68,0.08)"],
 
 	// Bookmarks
 	"bookmarks.navigateThroughAllFiles": false,
@@ -708,6 +725,10 @@
 	"outline-map.region.highlight": false,
 	"outline-map.workspace.excludes": [],
 	"redhat.telemetry.enabled": false,
+
+	// mermaid
+	"mermaid.gantt.fontSize": 12,
+	"mermaid.vscode.minimap": false,
 
 	// Bracket Highlighter
 	"BracketHighlighter.textColor": "#ac2e56",
@@ -757,11 +778,7 @@
 	},
 
 	// Indented Block Higlighting #F55A8C
-	"blockhighlight.background": [
-		"200", "100",
-		"255",
-		".04"
-	],
+	"blockhighlight.background": ["200", "100", "255", ".04"],
 	"blockhighlight.accentCurrentLine": false,
 	"blockhighlight.isWholeLine": true,
 
@@ -771,28 +788,24 @@
 		{
 			"regex": "^\\d{2}:\\d{2}(?::\\d{2})?",
 			"regexFlags": { "multiline": true },
-			"editor": [
-				{ "color": "#666666", "fontWeight": "bold" }]
+			"editor": [{ "color": "#666666", "fontWeight": "bold" }]
 		}, // code language .md
 		{
 			"regex": "(?<=```)[a-zA-Z0-9+_-]+",
 			"regexFlags": { "multiline": true },
-			"editor": [
-				{ "color": "#333333", "fontWeight": "bold" }]
+			"editor": [{ "color": "#333333", "fontWeight": "bold" }]
 		},
 		// aider
 		{
 			"regex": ".*(?:A!|I!).*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [
-				{ "color": "#aaaaaa" }]
+			"editor": [{ "color": "#aaaaaa" }]
 		},
 		// aider
 		{
 			"regex": ".*AI!.*(?:\n.+)*",
 			"regexFlags": { "multiline": true },
-			"editor": [
-				{ "color": "#F55A8C", "fontWeight": "bold" }]
+			"editor": [{ "color": "#F55A8C", "fontWeight": "bold" }]
 		}
 	],
 
@@ -800,5 +813,8 @@
 	"quickDim.opacity": 0.12,
 	"applescript.showNotifications": false,
 	"workbench.activityBar.location": "hidden",
-	"workbench.statusBar.visible": false,
+	"debug.disassemblyView.showSourceCode": false,
+	"mermaid-editor.generate.scale": 1,
+	"mermaid-editor.preview.backgroundColor": "#202020",
+	"explorer.excludeGitIgnore": true
 }
