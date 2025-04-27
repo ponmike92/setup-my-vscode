@@ -1,6 +1,6 @@
 [
 	// ~ 1 2 3 4 5 6 7 8 9 - - - --
-	// -- - - E - - - - I O P - - -
+	// -- - - E R - - - I O P - - -
 	// --- - S D - - - J - L - ' --
 	// ---- - - - - B - M , . - ---
 	//  - - - ⌘ --------- - -   ---
@@ -15,38 +15,39 @@
 	{ "key": "cmd+8"       , "command": "workbench.action.openEditorAtIndex8" },
 	{ "key": "cmd+9"       , "command": "workbench.action.openEditorAtIndex9" },
 	
+	{ "key": "cmd+up"      , "command": "gotoNextPreviousMember.previousMember" },
+	{ "key": "cmd+down"    , "command": "gotoNextPreviousMember.nextMember" },
+
 	{ "key": "cmd+e"       , "command": "editor.action.marker.next" },
-	{ "key": "cmd+i"       , "command": "python.execInREPL"
-						   , "when": "editorLangId == 'python'"},
+	{ "key": "cmd+r"       , "command": "editor.action.rename"
+						   , "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
+	{ "key": "cmd+i"       , "command": "python.execInREPL", "when": "editorLangId == 'python'"},
+	{ "key": "cmd+i"       , "command": "code-runner.run"  , "when": "editorLangId == 'markdown'" },
+
 	{ "key": "cmd+o"       , "command": "workbench.action.quickOpen" },
 	{ "key": "cmd+o"       , "command": "workbench.action.quickOpenNavigateNextInFilePicker"
 						   , "when"   : "inFilesPicker && inQuickOpen" },
 	{ "key": "cmd+p"       , "command": "workbench.action.showCommands" },
 
 	{ "key": "cmd+s"       , "command": "workbench.action.toggleSidebarVisibility" },
-	{ "key": "cmd+d"       , "command": "quickDim.dim" },
+	{ "key": "cmd+d"       , "command": "bookmarks.toggle", "when": "editorTextFocus" },
 	{ "key": "cmd+j"       , "command": "toggleSuggestionDetails"
 						   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
 	{ "key": "cmd+j"       , "command": "editor.action.triggerSuggest"
 						   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
+	{ "key": "cmd+k"       , "command": "workbench.action.terminal.killActiveTab" },
 	{ "key": "cmd+l"       , "command": "workbench.action.editor.nextChange"
 						   , "when"   : "editorTextFocus && !textCompareEditorActive" },
+	{ "key": "cmd+m"       , "command": "workbench.action.gotoMethod" },
+
 	{ "key": "cmd+'"       , "command": "workbench.action.openGlobalKeybindingsFile" },
 	{ "key": "cmd+[Quote]" , "command": "workbench.action.openGlobalKeybindingsFile" },
 
-	{ "key": "cmd+b"       , "command": "bookmarks.jumpToNext" },
-	{ "key": "cmd+m"       , "command": "workbench.action.gotoSymbol" },
 	{ "key": "cmd+,"       , "command": "workbench.action.openSettingsJson" },
 	{ "key": "cmd+[Comma]" , "command": "workbench.action.openSettingsJson" },
 	{ "key": "cmd+."       , "command": "editor.action.quickFix"
 						   , "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
 
-	{ "key": "cmd+up"      , "command": "betterPageUp" },
-	{ "key": "cmd+down"    , "command": "betterPageDown" },
-
-	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "terminalProcessSupported"
-	// ПЕРЕЗАГРУЖАТЬ REPL! "when": "activeEditor == 'workbench.editor.repl'"
-	
 
 	// ~ - - - - - - - - - - - - --
 	// -- - - E - - - - - O - - - -
@@ -85,6 +86,10 @@
 	{ "key": "shift+cmd+f"    , "command": "workbench.action.focusActiveEditorGroup"
 							  , "when"   : "searchViewletFocus" },
 
+	{ "key": "shift+cmd+m"    , "command": "markmap-vscode.open", "when": "editorLangId == 'markdown'" },
+	{ "key": "shift+cmd+m"    , "command": "mermaid-editor.preview", "when": "editorLangId == 'mermaid'"},
+	{ "key": "shift+cmd+m"    , "command": "jsoncrack-vscode.start.selected"
+							  , "when": "editorLangId == json || editorLangId == jsonc" },
 
 	{ "key": "shift+cmd+y"    , "command": "toggle"
 							  , "when"   : "editorTextFocus"
@@ -106,8 +111,6 @@
 	{ "key": "shift+cmd+r"    , "command": "references-view.findReferences"
 							  , "when": "editorHasReferenceProvider" },
 
-	{ "key": "alt+cmd+b"      , "command": "bookmarks.toggle"
-							  , "when": "editorTextFocus" },
 
 	// ~ - - - - - - - - - - - - --
 	// -- - - - - - - - - - - - - -
@@ -115,7 +118,7 @@
 	// ---- - - - - - - - - - - ---
 	//  - - ⌥ ⌘ --------- - -   ---
 
-
+	{ "key": "alt+cmd+d"       , "command": "quickDim.dim" },
 	// select by regex
 	{ "key": "alt+cmd+a", "command": "selectby.regex"
 						, "args": ["SelectCodeBlock"]
@@ -338,8 +341,10 @@
 
 	{ "key": "cmd+enter", "command": "list.select", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
 	{ "key": "cmd+down", "command": "list.select", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
-	{ "key": "alt+cmd+e", "command": "errorLens.toggle" },
-	{ "key": "alt+cmd+=", "command": "workbench.action.zoomIn" },
+	{
+		"key": "alt+cmd+=",
+		"command": "workbench.action.zoomIn"
+	},
 	{ "key": "alt+cmd+-", "command": "workbench.action.zoomOut" },
 	// toggle width of sidebar
 	{ "key": "shift+cmd+=", "when": "editorFocus", "command": "workbench.action.decreaseViewSize" },
@@ -376,7 +381,6 @@
 	{ "key": "shift+cmd+w"          , "command": "markwhen.openPreview" },
 	{ "key": "alt+cmd+h"            , "command": "cloak.hideSecrets" },
 	{ "key": "alt+cmd+r"            , "command": "references-view.clear" },
-	{ "key": "shift+cmd+m"          , "command": "markmap-vscode.open" },
 
 	// OFF THIS SHIT!
 	// OFF THIS SHIT!
@@ -828,5 +832,47 @@
 	{ "key": "shift+cmd+]"          , "command": "-workbench.action.debug.nextConsole" },
 	{ "key": "shift+cmd+]"          , "command": "-dimmer.ExpandDimmer" },
 	{ "key": "shift+cmd+/"          , "command": "-cloak.toggleSecrets" },
-	{ "key": "shift+alt+d"          , "command": "-notebook.cell.detectLanguage" }
+	{ "key": "shift+alt+d"          , "command": "-notebook.cell.detectLanguage" },
+	{ "key": "ctrl+alt+["           , "command": "-mermaid-editor.preview" },
+	{ "key": "cmd+r"                , "command": "-jupyter.refreshDataViewer" },
+	{ "key": "cmd+r"                , "command": "-workbench.action.terminal.chat.rerunRequest" },
+	{ "key": "alt+cmd+r"            , "command": "-workbench.action.terminal.toggleFindRegex" },
+	{ "key": "cmd+k m"              , "command": "-notebook.cell.changeLanguage" },
+	{ "key": "cmd+k cmd+i", "command": "-workbench.action.showHover" },
+	{ "key": "ctrl+alt+j", "command": "-code-runner.runByLanguage" },
+	{ "key": "ctrl+alt+k", "command": "-code-runner.runCustomCommand" },
+	{ "key": "ctrl+alt+m", "command": "-code-runner.stop" },
+	{ "key": "ctrl+alt+n", "command": "-code-runner.run" },
+	{ "key": "cmd+i", "command": "-workbench.action.terminal.suggestToggleDetails" },
+	{ "key": "ctrl+down", "command": "-gotoNextPreviousMember.nextMember" },
+	{ "key": "ctrl+up", "command": "-gotoNextPreviousMember.previousMember" },
+	{ "key": "cmd+up", "command": "-notebook.cell.chat.arrowOutUp" },
+	{ "key": "cmd+up", "command": "-notebook.cell.chat.focus" },
+	{ "key": "cmd+up", "command": "-notebook.cell.chat.focusPreviousCell" },
+	{ "key": "cmd+up", "command": "-notebook.cell.focusChatWidget" },
+	{ "key": "cmd+up", "command": "-notebook.focusTop" },
+	{ "key": "cmd+up", "command": "-interactive.history.focus" },
+	{ "key": "cmd+up", "command": "-interactive.history.focus" },
+	{ "key": "cmd+up", "command": "-list.stickyScroll.collapse" },
+	{ "key": "cmd+up", "command": "-chat.action.focus" },
+	{ "key": "cmd+up", "command": "-chat.action.focus" },
+	{ "key": "cmd+up", "command": "-inlineChat.arrowOutUp" },
+	{ "key": "cmd+up", "command": "-editor.action.goToTopHover" },
+	{ "key": "cmd+down", "command": "-list.stickyScrollselect" },
+	{ "key": "cmd+down", "command": "-notebook.cell.chat.arrowOutDown" },
+	{ "key": "cmd+down", "command": "-notebook.cell.chat.focus" },
+	{ "key": "cmd+down", "command": "-notebook.cell.chat.focusNextCell" },
+	{ "key": "cmd+down", "command": "-notebook.cell.focusNextChatWidget" },
+	{ "key": "cmd+down", "command": "-commentsFocusViewFromFilter" },
+	{ "key": "cmd+down", "command": "-notebook.focusBottom" },
+	{ "key": "cmd+down", "command": "-inlineChat.focus" },
+	{ "key": "cmd+down", "command": "-notebook.cell.focusInOutput" },
+	{ "key": "cmd+down", "command": "-selectNextCodeAction" },
+	{ "key": "cmd+down", "command": "-selectNextSuggestion" },
+	{ "key": "cmd+down", "command": "-widgetNavigation.focusNext" },
+	{ "key": "cmd+down", "command": "-workbench.action.chat.focusInput" },
+	{ "key": "cmd+down", "command": "-interactive.scrollToBottom" },
+	{ "key": "cmd+down", "command": "-quickInput.nextSeparatorWithQuickAccessFallback" },
+	{ "key": "cmd+f", "command": "-notebook.find" },
+	{ "key": "cmd+f", "command": "-workbench.action.terminal.focusFind"}
 ]
