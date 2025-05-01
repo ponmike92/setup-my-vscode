@@ -1,7 +1,7 @@
 [
 	// ~ 1 2 3 4 5 6 7 8 9 - - - --
-	// -- - - E R - - - I O P - - -
-	// --- - S D - - - J - L - ' --
+	// -- - - E R - Y - I O P - - -
+	// --- - S D - - - J K L - ' --
 	// ---- - - - - B - M , . - ---
 	//  - - - ⌘ --------- - -   ---
 
@@ -20,7 +20,8 @@
 
 	{ "key": "cmd+e"       , "command": "editor.action.marker.next" },
 	{ "key": "cmd+r"       , "command": "editor.action.rename"
-						   , "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
+						   , "when"   : "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
+	{ "key": "cmd+y"       , "command": "extension.jsonSelectionToYaml"},
 	{ "key": "cmd+i"       , "command": "python.execInREPL", "when": "editorLangId == 'python'"},
 	{ "key": "cmd+i"       , "command": "code-runner.run"  , "when": "editorLangId == 'markdown'" },
 
@@ -31,11 +32,17 @@
 
 	{ "key": "cmd+s"       , "command": "workbench.action.toggleSidebarVisibility" },
 	{ "key": "cmd+d"       , "command": "bookmarks.toggle", "when": "editorTextFocus" },
-	{ "key": "cmd+j"       , "command": "toggleSuggestionDetails"
+	{ "key": "cmd+j"       , "command": "extension.yamlSelectionToJson"},
+	{ "key": "cmd+k"       , "command": "toggleSuggestionDetails"
 						   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
-	{ "key": "cmd+j"       , "command": "editor.action.triggerSuggest"
+	{ "key": "cmd+h"       , "command": "editor.action.triggerSuggest"
 						   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
-	{ "key": "cmd+k"       , "command": "workbench.action.terminal.killActiveTab" },
+	{ "key": "cmd+k"       , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": [
+								"workbench.action.terminal.kill",
+								// "workbench.action.terminal.killActiveTab", 
+								"workbench.action.focusActiveEditorGroup"] } },
+
 	{ "key": "cmd+l"       , "command": "workbench.action.editor.nextChange"
 						   , "when"   : "editorTextFocus && !textCompareEditorActive" },
 	{ "key": "cmd+m"       , "command": "workbench.action.gotoMethod" },
@@ -86,9 +93,9 @@
 	{ "key": "shift+cmd+f"    , "command": "workbench.action.focusActiveEditorGroup"
 							  , "when"   : "searchViewletFocus" },
 
-	{ "key": "shift+cmd+m"    , "command": "markmap-vscode.open", "when": "editorLangId == 'markdown'" },
+	{ "key": "shift+cmd+m"    , "command": "markmap-vscode.open"   , "when": "editorLangId == 'markdown'" },
 	{ "key": "shift+cmd+m"    , "command": "mermaid-editor.preview", "when": "editorLangId == 'mermaid'"},
-	{ "key": "shift+cmd+m"    , "command": "jsoncrack-vscode.start.selected"
+	{ "key": "shift+cmd+v"    , "command": "jsoncrack-vscode.start.selected"
 							  , "when": "editorLangId == json || editorLangId == jsonc" },
 
 	{ "key": "shift+cmd+y"    , "command": "toggle"
@@ -873,6 +880,6 @@
 	{ "key": "cmd+down", "command": "-workbench.action.chat.focusInput" },
 	{ "key": "cmd+down", "command": "-interactive.scrollToBottom" },
 	{ "key": "cmd+down", "command": "-quickInput.nextSeparatorWithQuickAccessFallback" },
-	{ "key": "cmd+f", "command": "-notebook.find" },
-	{ "key": "cmd+f", "command": "-workbench.action.terminal.focusFind"}
+	{ "key": "cmd+f"   , "command": "-notebook.find" },
+	{ "key": "cmd+f"   , "command": "-workbench.action.terminal.focusFind"}
 ]
