@@ -1,7 +1,7 @@
 [
 	// ~ 1 2 3 4 5 6 7 8 9 - - - --
-	// -- - - E R - Y - I O P - - -
-	// --- - S D - - - J K L - ' --
+	// -- - - E R T Y U I O P - - -
+	// --- - S D - - H J K L - ' --
 	// ---- - - - - B - M , . - ---
 	//  - - - ⌘ --------- - -   ---
 
@@ -15,13 +15,59 @@
 	{ "key": "cmd+8"       , "command": "workbench.action.openEditorAtIndex8" },
 	{ "key": "cmd+9"       , "command": "workbench.action.openEditorAtIndex9" },
 	
+	// CONVERTS
+	{ "key": "cmd+H"       , "when"   : "editorHasSelection && editorLangId =~ /^(plaintext|ini)$/"
+						   , "command": "extension.convertToAsciiArt_Favorite"},
+
+	{ "key": "cmd+D"       , "when"   : "editorLangId =~ /^(plaintext|ini)$/ && editorHasSelection"
+						   , "command": "workbench.action.editor.changeLanguageMode", "args": "csv"},
+	{ "key": "cmd+D"       , "when"   : "editorLangId == 'json' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["json2csv.toCSV",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "csv"}]}},
+
+	{ "key": "cmd+J"       , "when"   : "editorLangId =~ /^(plaintext|ini|toml)$/ && editorHasSelection"
+						   , "command": "workbench.action.editor.changeLanguageMode", "args": "json"},
+	{ "key": "cmd+J"       , "when"   : "editorLangId == 'yaml' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["json2yaml.toJSON",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "json"}]}},
+	{ "key": "cmd+J"       , "when"   : "editorLangId == 'csv' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["json2csv.toJSON",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "json"}]}},
+
+
+	{ "key": "cmd+Y"       , "when"   : "editorLangId =~ /^(plaintext|ini|toml)$/ && editorHasSelection"
+						   , "command": "workbench.action.editor.changeLanguageMode", "args": "yaml"},
+	{ "key": "cmd+Y"       , "when"   : "editorLangId == 'json' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["json2yaml.toYAML",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "yaml"}]}},
+
+	{ "key": "cmd+T"       , "when"   : "editorLangId == 'json' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["vscode-to-toml.current-file.convert-json",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "toml"}]}},
+	{ "key": "cmd+T"       , "when"   : "editorLangId == 'yaml' && editorHasSelection"
+						   , "command": "extension.multiCommand.execute"
+						   , "args": { "sequence": ["vscode-to-toml.current-file.convert-yaml",
+									 { "command": "workbench.action.editor.changeLanguageMode", "args": "toml"}]}},
+
+
+	{ "key": "cmd+F"       , "command": "actions.find", "when": "editorFocus || editorIsOpen"},
+	{ "key": "cmd+m"       , "command": "workbench.action.gotoMethod", "when": "editorLangId !~ /^(csv|json|yaml)$/" },
+	// { "key": "cmd+m"       , "command": "csvToMdTable.convertSelection", "when": "editorLangId == 'csv'" },
+
+
+
 	{ "key": "cmd+up"      , "command": "gotoNextPreviousMember.previousMember" },
 	{ "key": "cmd+down"    , "command": "gotoNextPreviousMember.nextMember" },
 
 	{ "key": "cmd+e"       , "command": "editor.action.marker.next" },
 	{ "key": "cmd+r"       , "command": "editor.action.rename"
 						   , "when"   : "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
-	{ "key": "cmd+y"       , "command": "extension.jsonSelectionToYaml"},
+
 	{ "key": "cmd+i"       , "command": "python.execInREPL", "when": "editorLangId == 'python'"},
 	{ "key": "cmd+i"       , "command": "code-runner.run"  , "when": "editorLangId == 'markdown'" },
 
@@ -31,12 +77,11 @@
 	{ "key": "cmd+p"       , "command": "workbench.action.showCommands" },
 
 	{ "key": "cmd+s"       , "command": "workbench.action.toggleSidebarVisibility" },
-	{ "key": "cmd+d"       , "command": "bookmarks.toggle", "when": "editorTextFocus" },
-	{ "key": "cmd+j"       , "command": "extension.yamlSelectionToJson"},
+	{ "key": "cmd+b"       , "command": "bookmarks.toggle", "when": "editorTextFocus" },
 	{ "key": "cmd+k"       , "command": "toggleSuggestionDetails"
 						   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
-	{ "key": "cmd+h"       , "command": "editor.action.triggerSuggest"
-						   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
+	// { "key": "cmd+h"       , "command": "editor.action.triggerSuggest"
+	// 					   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
 	{ "key": "cmd+k"       , "command": "extension.multiCommand.execute"
 						   , "args": { "sequence": [
 								"workbench.action.terminal.kill",
@@ -45,7 +90,6 @@
 
 	{ "key": "cmd+l"       , "command": "workbench.action.editor.nextChange"
 						   , "when"   : "editorTextFocus && !textCompareEditorActive" },
-	{ "key": "cmd+m"       , "command": "workbench.action.gotoMethod" },
 
 	{ "key": "cmd+'"       , "command": "workbench.action.openGlobalKeybindingsFile" },
 	{ "key": "cmd+[Quote]" , "command": "workbench.action.openGlobalKeybindingsFile" },
@@ -95,6 +139,7 @@
 
 	{ "key": "shift+cmd+m"    , "command": "markmap-vscode.open"   , "when": "editorLangId == 'markdown'" },
 	{ "key": "shift+cmd+m"    , "command": "mermaid-editor.preview", "when": "editorLangId == 'mermaid'"},
+	{ "key": "shift+cmd+m"    , "command": "vega.preview"          , "when": "editorLangId == 'json'" },
 	{ "key": "shift+cmd+v"    , "command": "jsoncrack-vscode.start.selected"
 							  , "when": "editorLangId == json || editorLangId == jsonc" },
 
@@ -163,6 +208,7 @@
 		"command": "extension.multiCommand.execute",
 		"args": { "sequence": ["workbench.files.action.focusOpenEditorsView", "workbench.action.focusActiveEditorGroup"] }
 	},
+
 	{ "key": "ctrl+shift+alt+cmd+v", "when": "openEditorsFocus", "command": "workbench.action.focusActiveEditorGroup" },
 
 
@@ -375,7 +421,9 @@
 	{ "key": "alt+cmd+i"            , "command": "workbench.action.toggleDevTools" },
 	{ "key": "shift+cmd+'"          , "command": "workbench.action.openGlobalKeybindings" },
 	{ "key": "alt+cmd+n"            , "command": "workbench.action.files.newUntitledFile" },
-	{ "key": "alt+cmd+a"            , "command": "align.by.regex", "when": "editorHasSelection" },
+	{ "key": "alt+cmd+a"            , "command": "align.by.regex" 
+									, "when": "editorHasSelection && editorLangId != 'csv'" },
+	{ "key": "alt+cmd+a"            , "command": "rainbow-csv.Align", "when": "editorLangId == 'csv'" },
 	{ "key": "shift+cmd+[Backquote]", "command": "workbench.action.terminal.toggleTerminal" },
 	{ "key": "alt+cmd+m"            , "command": "markdown.extension.toc.create" },
 	{ "key": "alt+["                , "command": "dakara-foldplus.levelAtCursor" },
@@ -881,5 +929,13 @@
 	{ "key": "cmd+down", "command": "-interactive.scrollToBottom" },
 	{ "key": "cmd+down", "command": "-quickInput.nextSeparatorWithQuickAccessFallback" },
 	{ "key": "cmd+f"   , "command": "-notebook.find" },
-	{ "key": "cmd+f"   , "command": "-workbench.action.terminal.focusFind"}
+	{
+		"key": "cmd+f",
+		"command": "-workbench.action.terminal.focusFind"
+	},
+	{
+		"key": "ctrl+alt+1",
+		"command": "-extension.convertToAsciiArt_Favorite",
+		"when": "editorHasSelection"
+	}
 ]
