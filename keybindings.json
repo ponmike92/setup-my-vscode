@@ -17,11 +17,13 @@
 	{ "key": "cmd+6"       , "command": "workbench.action.openEditorAtIndex6" },
 	{ "key": "cmd+7"       , "command": "workbench.action.openEditorAtIndex7" },
 	{ "key": "cmd+8"       , "command": "workbench.action.openEditorAtIndex8" },
-	{ "key": "cmd+9"       , "command": "workbench.action.openEditorAtIndex9" },	
+	{ "key": "cmd+9"       , "command": "workbench.action.openEditorAtIndex9" },
 
 	{ "key": "cmd+up"      , "when"   : "findWidgetVisible"
 						   , "command": "editor.action.previousMatchFindAction" },
 	{ "key": "cmd+down"    , "when"   : "findWidgetVisible"
+						   , "command": "editor.action.nextMatchFindAction" },
+	{ "key": "enter"       , "when"   : "findWidgetVisible"
 						   , "command": "editor.action.nextMatchFindAction" },
 
 	{ "key": "cmd+up"      , "when"   : "!findWidgetVisible"
@@ -136,12 +138,12 @@
 
 	{ "key": "cmd+,"       , "command": "workbench.action.openSettingsJson" },
 	{ "key": "cmd+[Comma]" , "command": "workbench.action.openSettingsJson" },
-	{ "key": "cmd+."       , "command": "editor.action.quickFix"
-						   , "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
+	// { "key": "cmd+."       , "command": "editor.action.quickFix"
+	// 					   , "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
 
-	// { "key": "cmd+h"       , "command": "toggleSuggestionDetails"
+	// { "key": "cmd+N"       , "command": "toggleSuggestionDetails"
 	// 					   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
-	// { "key": "cmd+h"       , "command": "editor.action.triggerSuggest"
+	// { "key": "cmd+."       , "command": "editor.action.triggerSuggest"
 	// 					   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
 	// ~ - - - - - - - - - - - - --
 	// -- - - E - - - - - O - - - -
@@ -160,7 +162,7 @@
 	{ "key": "shift+cmd+i"    , "command": "workbench.action.terminal.new" },
 	{ "key": "shift+cmd+v"    , "command": "infranodus-graph-view.graphView.focus" },
 	{ "key": "shift+cmd+h"    , "command": "time.showReport" },
-	{ "key": "shift+cmd+c"    , "when": "editorLangId == 'csv'" 
+	{ "key": "shift+cmd+c"    , "when": "editorLangId == 'csv'"
 							  , "command": "extension.multiCommand.execute"
 							  , "args"   : { "sequence": [
 										   "rainbow-csv.CopyBack"
@@ -168,7 +170,7 @@
 										   ,"workbench.action.nextEditor"
 										   ,"workbench.action.closeActiveEditor"
 										   ,"workbench.action.closeActiveEditor"] }},
-	{ "key": "shift+cmd+c"    , "when": "editorLangId != 'csv'" 
+	{ "key": "shift+cmd+c"    , "when": "editorLangId != 'csv'"
 							  , "command": "fileTreeExtractor.copyFileTreeFromThisDir" },
 // workbench.action.nextEditor
 	{ "key": "shift+cmd+t"    , "command": "timeline.focus" },
