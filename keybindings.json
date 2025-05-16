@@ -1,10 +1,6 @@
 [
-	// TODO
-	// SEARCH BY REGEX
-	// SEARCH BY CASE
-
 	// ~ 1 2 3 4 5 6 7 8 9 - - - --
-	// -- - - E R T Y U I O P - - -
+	// -- - - E R T Y - I O P - - -
 	// --- - S D F G H J K L - ' --
 	// ---- - - - - B - M , . - ---
 	//  - - - ⌘ --------- - -   ---
@@ -46,20 +42,53 @@
 	{ "key": "cmd+down"    , "when"   : "searchViewletVisible"
 						   , "command": "search.action.focusNextSearchResult" },
 
+	// SELECT
+	{ "key": "cmd+S"	   , "when"   : "!editorHasSelection"
+						   , "command": "selectby.regex"
+						   , "args"   : ["SelectParagraph"]},
+
+	{ "key": "cmd+S"	   , "when"   : "editorHasSelection && !(editorLangId =~ /^(markdown|ini)$/)"
+						   , "command": "editor.action.smartSelect.expand" },
+
+	{ "key": "cmd+S"	   , "when"   : "editorHasSelection && editorLangId == 'markdown'"
+						   , "command": "selectby.regex"
+						   , "args"   : ["SelectBetweenHeadings"]},
+
+	// ELIGN
+	{ "key": "cmd+E"       , "when"   : "!editorHasSelection"
+						   , "command": "editor.action.marker.next" },
+	{ "key": "cmd+E"       , "when"   : "editorHasSelection && editorLangId == 'csv'"
+						   , "command": "rainbow-csv.Align" },
+	{ "key": "cmd+E"       , "when"   : "editorHasSelection && editorLangId == 'markdown'"
+						   , "command": "editor.action.formatDocument" },
+	{ "key": "cmd+E"       , "when"   : "editorHasSelection && editorLangId != 'csv' && editorLangId != 'markdown'"
+						   , "command": "align.by.regex" },
+
+	// SHRINK
+	{ "key": "alt+cmd+E"   , "when"   : "editorHasSelection && editorLangId == 'csv'"
+						   , "command": "rainbow-csv.Shrink" },
+	{ "key": "alt+cmd+E"   , "when"   : "editorHasSelection && editorLangId != 'csv'"
+						   , "command": "findInCurrentFile.delSpacesSecondary" },
+
 	{ "key": "alt+cmd+up"  , "command": "gotoNextPreviousMember.previousMember" },
 	{ "key": "alt+cmd+down", "command": "gotoNextPreviousMember.nextMember" },
-
-
-	{ "key": "cmd+U"       , "when": "editorLangId != 'csv' && editorHasSelection" , "command": "align.by.regex" },
-	{ "key": "cmd+U"       , "when": "editorLangId == 'csv' && editorHasSelection" , "command": "rainbow-csv.Align" },
 
 	// CONVERTS
 	{ "key": "cmd+H"       , "when"   : "editorHasSelection && editorLangId =~ /^(plaintext|ini)$/"
 						   , "command": "extension.convertToAsciiArt_Favorite"},
 
-	{ "key": "cmd+D"       , "when"   : "editorLangId =~ /^(plaintext|ini)$/ && editorHasSelection"
+	{ "key": "cmd+T"       , "when"   : "editorHasSelection"
+						   , "command": "workbench.action.tasks.runTask"
+						   , "args"   : "TextifyAfterCopyThenPaste"},
+
+	{ "key": "cmd+T"       , "when"   : "!editorHasSelection"
+						   , "command": "todo-tree.goToPrevious"},
+
+	{ "key": "cmd+D"       , "when"   : "!editorHasSelection && editorLangId !~ /^(json|csv|toml|yaml|plaintext)$/ && editorHasCompletionItemProvider "
+						   , "command": "editor.action.triggerSuggest"},
+	{ "key": "cmd+D"       , "when"   : "editorHasSelection && editorLangId =~ /^(plaintext|ini)$/"
 						   , "command": "workbench.action.editor.changeLanguageMode", "args": "csv"},
-	{ "key": "cmd+D"       , "when"   : "editorLangId == 'json' && editorHasSelection"
+	{ "key": "cmd+D"       , "when"   : "editorHasSelection && editorLangId == 'json'"
 						   , "command": "extension.multiCommand.execute"
 						   , "args": { "sequence": ["json2csv.toCSV"
 						   			, { "command": "workbench.action.editor.changeLanguageMode", "args": "csv"},
@@ -84,15 +113,6 @@
 						   , "args": { "sequence": ["json2yaml.toYAML",
 									 { "command": "workbench.action.editor.changeLanguageMode", "args": "yaml"}]}},
 
-	{ "key": "cmd+T"       , "when"   : "editorLangId == 'json' && editorHasSelection"
-						   , "command": "extension.multiCommand.execute"
-						   , "args": { "sequence": ["vscode-to-toml.current-file.convert-json",
-									 { "command": "workbench.action.editor.changeLanguageMode", "args": "toml"}]}},
-	{ "key": "cmd+T"       , "when"   : "editorLangId == 'yaml' && editorHasSelection"
-						   , "command": "extension.multiCommand.execute"
-						   , "args": { "sequence": ["vscode-to-toml.current-file.convert-yaml",
-									 { "command": "workbench.action.editor.changeLanguageMode", "args": "toml"}]}},
-
 	{ "key": "cmd+K"       , "when"   : "terminalIsOpen"
 						   , "command": "extension.multiCommand.execute"
 						   , "args": { "sequence": [
@@ -107,18 +127,19 @@
 	// { "key": "cmd+m"       , "command": "csvToMdTable.convertSelection", "when": "editorLangId == 'csv'" },
 
 
-	{ "key": "cmd+e"       , "command": "editor.action.marker.next" },
 	{ "key": "cmd+R"       , "command": "editor.action.rename"
 						   , "when"   : "editorHasRenameProvider && editorTextFocus && !editorReadonly"},
 
 	{ "key": "cmd+I"       , "when": "editorLangId == 'python'"  , "command": "python.execInREPL" },
 	{ "key": "cmd+I"       , "when": "editorLangId == 'markdown'", "command": "code-runner.run" },
 	{ "key": "cmd+I"       , "when": "editorLangId == 'csv'"     , "command": "rainbow-csv.RBQL" },
-	// { "key": "cmd+I"       , "when": "editorLangId == 'csv'"     , "command": "extension.multiCommand.execute",
-	// 						  , "args"   : { "sequence": [
-	// 									   "rainbow-csv.Shrink",
-	// 									   "rainbow-csv.RBQL"] }},
-
+	{ "key": "alt+cmd+I"   , "when"   : "editorLangId == 'csv'"  , "command": "extension.multiCommand.execute"
+						   , "args"   : { "sequence": [
+										   "rainbow-csv.CopyBack"
+										   ,"workbench.action.nextEditor"
+										   ,"workbench.action.nextEditor"
+										   ,"workbench.action.closeActiveEditor"
+										   ,"workbench.action.closeActiveEditor"] }},
 
 
 
@@ -127,7 +148,6 @@
 						   , "when"   : "inFilesPicker && inQuickOpen" },
 	{ "key": "cmd+p"       , "command": "workbench.action.showCommands" },
 
-	{ "key": "cmd+s"       , "command": "workbench.action.toggleSidebarVisibility" },
 	{ "key": "cmd+b"       , "command": "bookmarks.toggle", "when": "editorTextFocus" },
 
 	{ "key": "cmd+l"       , "command": "workbench.action.editor.nextChange"
@@ -143,13 +163,12 @@
 
 	// { "key": "cmd+N"       , "command": "toggleSuggestionDetails"
 	// 					   , "when"   : "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
-	// { "key": "cmd+."       , "command": "editor.action.triggerSuggest"
-	// 					   , "when"   : "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
 	// ~ - - - - - - - - - - - - --
 	// -- - - E - - - - - O - - - -
 	// --- - - - - - - - - - - - --
 	// ⇧⇧⇧⇧ - - - - - - - - - - ---
 	//  - - - ⌘ --------- - -   ---
+	{ "key": "shift+cmd+s"    , "command": "workbench.action.toggleSidebarVisibility" },
 	{ "key": "shift+cmd+k"    , "command": "workbench.action.toggleStatusbarVisibility" },
 	{ "key": "shift+alt+cmd+k", "command": "workbench.action.toggleActivityBarVisibility" },
 	{ "key": "alt+cmd+p"      , "command": "workbench.view.extension.project-manager" },
@@ -162,17 +181,16 @@
 	{ "key": "shift+cmd+i"    , "command": "workbench.action.terminal.new" },
 	{ "key": "shift+cmd+v"    , "command": "infranodus-graph-view.graphView.focus" },
 	{ "key": "shift+cmd+h"    , "command": "time.showReport" },
-	{ "key": "shift+cmd+c"    , "when": "editorLangId == 'csv'"
-							  , "command": "extension.multiCommand.execute"
-							  , "args"   : { "sequence": [
-										   "rainbow-csv.CopyBack"
-										   ,"workbench.action.nextEditor"
-										   ,"workbench.action.nextEditor"
-										   ,"workbench.action.closeActiveEditor"
-										   ,"workbench.action.closeActiveEditor"] }},
-	{ "key": "shift+cmd+c"    , "when": "editorLangId != 'csv'"
+
+
+	{ "key": "shift+cmd+c"    , "command": "-fileTreeExtractor.copyFileTreeFromThisDir" },
+	{ "key": "shift+cmd+c"    , "when": "editorLangId =~ /^(json|jsonc|yaml|toml)$/ || resourceExtname =~ /^(.jpg|.png)$/"
+							  , "command": "copyFilePath"},
+	{ "key": "shift+cmd+c"    , "when": "!(editorLangId =~ /^(json|jsonc|yaml|toml)$/) && !(resourceExtname =~ /^(.jpg|.png)$/)"
 							  , "command": "fileTreeExtractor.copyFileTreeFromThisDir" },
-// workbench.action.nextEditor
+
+
+	// workbench.action.nextEditor
 	{ "key": "shift+cmd+t"    , "command": "timeline.focus" },
 	{ "key": "shift+cmd+t"    , "command": "extension.multiCommand.execute"
 							  , "when"   : "sideBarFocus && timeline.active && view.timeline.visible"
@@ -230,18 +248,6 @@
 	//  - - ⌥ ⌘ --------- - -   ---
 	{ "key": "alt+cmd+u"       , "command": "rainbow-csv.Shrink", "when": "editorLangId == 'csv'"},
 	{ "key": "alt+cmd+d"       , "command": "quickDim.dim" },
-	// select by regex
-	{ "key": "alt+cmd+a", "command": "selectby.regex"
-						, "args": ["SelectCodeBlock"]
-						, "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$/" },
-
-	{ "key": "ctrl+cmd+a", "command": "selectby.regex"
-						, "args": ["SelectParagraph"]
-						, "when": "editorTextFocus" },
-
-	{ "key": "shift+cmd+a", "command": "selectby.regex"
-						, "args": ["SelectBetweenHeadings"]
-						, "when": "editorTextFocus && editorLangId =~ /^markdown$|^rmd$/" },
 
 	// FOLDING
 	{ "key": "cmd+[BracketLeft]", "command": "editor.fold" },
@@ -257,7 +263,7 @@
 	{ "key": "ctrl+cmd+[BracketRight]", "command": "editor.unfoldAll" },
 
 	// explorer - ordering
-	{ "key": "shift+cmd+u", "command": "toggle", "args": { "id": "explorer_files_order", "value": [{ "explorer.sortOrder": "default" }, { "explorer.sortOrder": "modified" }] } },
+	// { "key": "shift+cmd+u", "command": "toggle", "args": { "id": "explorer_files_order", "value": [{ "explorer.sortOrder": "default" }, { "explorer.sortOrder": "modified" }] } },
 	// explorer - gitignore
 	{ "key": "shift+cmd+.", "command": "explorer-gitignore.toggle" },
 	// explorer - etc
@@ -957,5 +963,10 @@
 		"key": "ctrl+shift+cmd+left",
 		"command": "-editor.action.smartSelect.shrink",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+cmd+c",
+		"command": "-copyRelativeFilePath",
+		"when": "!editorFocus"
 	}
 ]
