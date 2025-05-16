@@ -1,9 +1,9 @@
 {
 	// FONT & THEME
-	"editor.fontSize": 14,
-	"terminal.integrated.fontSize": 13,
-	"scm.inputFontSize": 14,
-	"window.zoomLevel": 0,
+	"editor.fontSize": 15,
+	"terminal.integrated.fontSize": 15,
+	"scm.inputFontSize": 15,
+	"window.zoomLevel": -0.35,
 	"editor.fontFamily": "JetBrainsMono Nerd Font",
 	// "editor.fontFamily": "Iosevka Aile",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
@@ -24,6 +24,25 @@
 
 	// COLORS
 	"workbench.colorCustomizations": {
+		// breadcrumbs
+		"breadcrumb.foreground": "#ffffff20",
+		"breadcrumb.focusForeground": "#ffffff",
+		"breadcrumb.activeSelectionForeground": "#ffffff",
+
+		// scrollbar 
+		"scrollbarSlider.background": "#ffffff15",
+
+		// search
+		"editor.findMatchHighlightBackground": "#ffffff18",
+		"editor.findMatchHighlightBorder": "#ffffff50",
+		"editor.findMatchBackground": "#ffffff00",
+		"editor.findMatchBorder": "#ffffff50",
+
+		// selection
+		"editor.selectionBackground": "#ffffff09",
+		"editor.selectionHighlightBackground": "#ffffff00",
+		"editor.selectionHighlightBorder": "#ffffff30",
+
 		// all
 		"foreground": "#666666",
 
@@ -100,9 +119,6 @@
 
 		// folded
 		"editor.foldBackground": "#ffffff00",
-
-		// selection
-		"editor.selectionBackground": "#303030",
 
 		// main background
 		"editor.background": "#202020",
@@ -305,7 +321,7 @@
 	// FORMATTING
 	// editor
 	"editor.formatOnSave": false,
-	"editor.formatOnPaste": true,
+	"editor.formatOnPaste": false,
 	"editor.formatOnType": false,
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
@@ -320,7 +336,7 @@
 	"prettier.configPath": "/Users/ponomi/.config/prettier/.prettierrc",
 	// файлы вне проекта или Untitled? (лучше чем ничего)
 	// ↓ ↓ ↓ ↓ ↓ ↓
-	"prettier.printWidth": 160,
+	"prettier.printWidth": 110,
 	"prettier.useTabs": true,
 	"prettier.singleQuote": true,
 	"prettier.jsxSingleQuote": true,
@@ -332,6 +348,9 @@
 	// JSON
 	"[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 	"[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+	// TS
+	"[typescriptreact]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
 
 	// YAML
 	// "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -358,7 +377,8 @@
 		// "editor.defaultFormatter": "tehnix.vscode-tidymarkdown",
 		"editor.detectIndentation": true,
 		"editor.insertSpaces": true,
-		"editor.tabSize": 2
+		"editor.tabSize": 2,
+		"editor.defaultFormatter": "darkriszty.markdown-table-prettify"
 	},
 
 	// shell
@@ -413,6 +433,7 @@
 
 	// LANGUAGES
 
+
 	// WINDOW
 	// EDIT ME: 'Contents/Resources/app/out/main.js'
 	//   sed -i 's/webPreferences/frame:!1,webPreferences/'
@@ -422,24 +443,22 @@
 	"window.openFilesInNewWindow": "off",
 	"window.nativeTabs": false,
 	"window.openFoldersInNewWindow": "off",
-
-	// BREADCRUMBS
-	"breadcrumbs.enabled": false,
+	"breadcrumbs.filePath": "on",
+	// "breadcrumbs.showFiles": false,
 	"breadcrumbs.icons": false,
 	"breadcrumbs.showKeys": false,
-	"breadcrumbs.showFiles": false,
 	"breadcrumbs.symbolPath": "off",
-	"breadcrumbs.showArrays": false,
-	"breadcrumbs.showEvents": false,
-	"breadcrumbs.showFields": false,
-	"breadcrumbs.showClasses": false,
-	"breadcrumbs.showMethods": false,
-	"breadcrumbs.showBooleans": false,
-	"breadcrumbs.showFunctions": false,
-	"breadcrumbs.showConstants": false,
-	"breadcrumbs.showEnumMembers": false,
-	"breadcrumbs.showConstructors": false,
-	"breadcrumbs.filePath": "off",
+	// "breadcrumbs.showConstants": false,
+	// "breadcrumbs.showEnumMembers": false,
+	// "breadcrumbs.showConstructors": false,
+	// "breadcrumbs.showArrays": false,
+	// "breadcrumbs.showEvents": false,
+	// "breadcrumbs.showFields": false,
+	// "breadcrumbs.showClasses": false,
+	// "breadcrumbs.showMethods": false,
+	// "breadcrumbs.showBooleans": false,
+	// "breadcrumbs.showFunctions": false,
+
 
 	// FILES
 	"files.exclude": {},
@@ -476,7 +495,7 @@
 
 	// redundant
 	"workbench.tree.enableStickyScroll": false,
-	"workbench.startupEditor": "none",
+	"workbench.startupEditor": "newUntitledFile",
 	"workbench.editor.editorActionsLocation": "hidden",
 	"workbench.layoutControl.enabled": false,
 	"workbench.editor.showTabs": "none",
@@ -487,7 +506,7 @@
 	"workbench.editor.labelFormat": "short",
 	"workbench.quickOpen.closeOnFocusLost": false,
 	"explorer.openEditors.sortOrder": "editorOrder",
-	"explorer.sortOrder": "modified",
+	"explorer.sortOrder": "default",
 
 	// nesting
 	"explorer.fileNesting.patterns": {
@@ -523,7 +542,7 @@
 	"editor.suggest.showDeprecated": false,
 	"editor.suggest.showEvents"    : false,
 	"editor.suggest.showIssues"    : false,
-	
+
 	// "editor.suggest.showClasses"       : true,
 	// "editor.suggest.showEnumMembers"   : false,
 	// "editor.suggest.showFields"        : false,
@@ -650,7 +669,8 @@
 		".env",
 		"__pycache__",
 		".python-version",
-		"uv.lock"
+		"uv.lock",
+		"node_modules"
 	],
 
 	// Code Runner
@@ -711,6 +731,9 @@
 	"bookmarks.gutterIconFillColor": "crimson",
 	"bookmarks.gutterIconBorderColor": "rgb(99, 40, 64)",
 
+	// Convert To Ascii Art
+	"convertToAsciiArt.favoriteFont": "Star Wars",
+
 	// Scroll Faster
 	"scrollFaster.scrollByLines": 8,
 
@@ -727,9 +750,32 @@
 	"outline-map.workspace.excludes": [],
 	"redhat.telemetry.enabled": false,
 
+	// Snipped
+	"snipped.disableTitle": true,
+	"snipped.enableLogo": false,
+	"snipped.scale": 2,
+	"snipped.enablePng": true,
+
+	// Find And Transform
+	"findInCurrentFile": {
+		"delSpacesSecondary": {
+			"title": "Delete Spaces Secondary",
+			"find": "(?<=\\S)[ \\t]{2,}",
+			"replace": "",
+			"isRegex": true,
+			"restrictFind": "selections",
+			"preserveSelections": true
+		}
+	},
+
 	// mermaid
 	"mermaid.gantt.fontSize": 12,
 	"mermaid.vscode.minimap": false,
+
+	// Trailing Spaces
+	"trailing-spaces.borderColor": "rgba(255,255,255,0.00)",
+	"trailing-spaces.backgroundColor": "rgba(255,255,255,0.01)",
+	"trailing-spaces.trimOnSave": false,
 
 	// Bracket Highlighter
 	"BracketHighlighter.textColor": "#ac2e56",
@@ -739,6 +785,35 @@
 	"markdown.extension.print.theme": "dark",
 	"markdown.extension.bold.indicator": "**",
 	"markdown.extension.italic.indicator": "_",
+
+	// Rainbow CSV
+	"rainbow_csv.rbql_with_headers_by_default": true,
+
+	// Better Comments
+	"better-comments.tags": [
+		{
+			"tag": "TODO",
+			"color": "#ffffff55",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "#ffffff12",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "FIX",
+			"color": "#ffffff55",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "#ffffff12",
+			"bold": false,
+			"italic": false
+		}
+	],
+
+	// TOD O  TREE
+	"todo-tree.highlights.enabled": false,
+	"todo-tree.tree.scanMode": "workspace",
 
 	// Markdown Preview Enchanced
 	"markdown-preview-enhanced.mermaidTheme": "dark",
@@ -762,6 +837,12 @@
 			"backwardInclude": false,
 			"forwardInclude": false
 		},
+		"SelectPythonFunction": {
+			"forward": "def\\s+\\w+\\s*\\([^)]*\\):\\s*(\\n|#|$)",
+			"backward": "(^|\\n)(?=\\s*def\\s|\\s*class\\s)",
+			"forwardInclude": false,
+			"backwardInclude": false
+		},
 		"SelectParagraph": {
 			"flags": "m",
 			"backward": "(^|\\r?\\n)[ \\t]*\\r?\\n",
@@ -784,49 +865,48 @@
 	"blockhighlight.isWholeLine": true,
 
 	// Regex Robin
-	"regexrobin.rules": [
-		// timecodes
-		{
-			"regex": "^\\d{2}:\\d{2}(?::\\d{2})?",
-			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#666666", "fontWeight": "bold" }]
-		}, // code language .md
-		{
-			"regex": "(?<=```)[a-zA-Z0-9+_-]+",
-			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#333333", "fontWeight": "bold" }]
-		},
-		// aider
-		{
-			"regex": ".*(?:A!|I!).*(?:\n.+)*",
-			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#aaaaaa" }]
-		},
-		// aider
-		{
-			"regex": ".*AI!.*(?:\n.+)*",
-			"regexFlags": { "multiline": true },
-			"editor": [{ "color": "#F55A8C", "fontWeight": "bold" }]
-		}
-	],
+	// "regexrobin.rules": [
+	// 	{
+	// 		"regex": "^\\d{2}:\\d{2}(?::\\d{2})?",
+	// 		"regexFlags": { "multiline": true },
+	// 		"editor": [{ "color": "#666666", "fontWeight": "bold" }]
+	// 	},
+	// 	{
+	// 		"regex": "(?<=```)[a-zA-Z0-9+_-]+",
+	// 		"regexFlags": { "multiline": true },
+	// 		"editor": [{ "color": "#333333", "fontWeight": "bold" }]
+	// 	},
+	// 	{
+	// 		"regex": ".*(?:A!|I!).*(?:\n.+)*",
+	// 		"regexFlags": { "multiline": true },
+	// 		"editor": [{ "color": "#aaaaaa" }]
+	// 	},
+	// 	{
+	// 		"regex": ".*AI!.*(?:\n.+)*",
+	// 		"regexFlags": { "multiline": true },
+	// 		"editor": [{ "color": "#F55A8C", "fontWeight": "bold" }]
+	// 	}
+	// ],
 
 	// Quick Dim
 	"quickDim.opacity": 0.12,
+
+	// ETC..
 	"applescript.showNotifications": false,
-	"workbench.activityBar.location": "hidden",
 	"debug.disassemblyView.showSourceCode": false,
 	"mermaid-editor.generate.scale": 1,
 	"mermaid-editor.preview.backgroundColor": "#202020",
-	"explorer.excludeGitIgnore": true,
-	"yaml2json.yamlIndentationSpaces": 4,
-	"jsonFlow.graph.nodeHeight": 30,
-	"jsonFlow.graph.nodeWidth": 100,
-	"jsonFlow.graph.edgeColor": "red",
 	"indentRainbow.errorColor": "rgba(128,32,32,0.0)",
 	"[csv]": {
 		"editor.inlayHints.maximumLength": 0,
 		"editor.inlayHints.fontFamily": ""
 	},
-	"convertToAsciiArt.favoriteFont": "Star Wars",
-	"editor.suggest.showWords": false
+	"editor.suggest.showWords": false,
+	"workbench.welcomePage.walkthroughs.openOnInstall": false,
+	"breadcrumbs.enabled": false,
+	"task.problemMatchers.neverPrompt": {
+		"shell": true
+	},
+	"workbench.activityBar.location": "hidden",
+	"explorer.excludeGitIgnore": true
 }
